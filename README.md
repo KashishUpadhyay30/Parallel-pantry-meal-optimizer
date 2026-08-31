@@ -1,4 +1,4 @@
-﻿# High-Performance Parallel Multi-Objective Optimization for Real-Time Pantry-Aware Meal Planning
+# High-Performance Parallel Multi-Objective Optimization for Real-Time Pantry-Aware Meal Planning
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![C++](https://img.shields.io/badge/C++-17%20%2F%2020-blue.svg)](https://isocpp.org/)
@@ -114,8 +114,8 @@ parallel-pantry-meal-optimizer/
 
 ### 1. Clone & Set Up Environment
 ```bash
-git clone https://github.com/example/parallel-pantry-meal-optimizer.git
-cd parallel-pantry-meal-optimizer
+git clone https://github.com/KashishUpadhyay30/Parallel-pantry-meal-optimizer.git
+cd Parallel-pantry-meal-optimizer
 
 # Install Python dependencies
 pip install -r requirements.txt
@@ -127,7 +127,16 @@ python scripts/generate_datasets.py
 python src/preprocessing/preprocess.py
 ```
 
-### 3. Run Automated Tests
+### 3. Compile and Run
+```powershell
+# Build C++ Executables
+powershell -ExecutionPolicy Bypass -File scripts/build_cpp.ps1
+
+# Run Sequential Optimization
+.\bin\sequential_ga.exe --verbose
+```
+
+### 4. Run Automated Tests
 ```bash
 python -m unittest discover tests
 ```
@@ -137,7 +146,7 @@ python -m unittest discover tests
 ## 📊 Roadmap & Project Phases
 
 - [x] **Phase 1: Project Setup, Multi-Tier Dataset Pipeline & Problem Formulation**
-- [ ] **Phase 2: Sequential Genetic Algorithm (C++)**
+- [x] **Phase 2: Sequential Genetic Algorithm (C++)**
 - [ ] **Phase 3: OpenMP Parallel Shared-Memory Island Model**
 - [ ] **Phase 4: Advanced Island Topologies & Migration Strategies**
 - [ ] **Phase 5: Distributed Memory MPI Extension**
@@ -149,5 +158,12 @@ python -m unittest discover tests
 
 ---
 
-## 👥 Authors & Academic Context
-Developed as an HPC research project investigating parallel evolutionary heuristics for combinatorial real-time resource allocation and waste minimization.
+## 👥 Authors & Contributors
+
+Developed as an HPC academic research project investigating parallel evolutionary multi-objective heuristics:
+
+| Contributor | GitHub Profile | Role |
+| :--- | :--- | :--- |
+| **Kashish Upadhyay** | [@KashishUpadhyay30](https://github.com/KashishUpadhyay30) | Lead Author & Project Architect |
+| **Animesh Labh** | [@animeshlabh57-rgb](https://github.com/animeshlabh57-rgb) | Research & HPC Co-Author |
+
