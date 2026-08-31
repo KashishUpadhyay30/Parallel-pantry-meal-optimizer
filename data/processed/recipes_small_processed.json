@@ -1,0 +1,3378 @@
+[
+  {
+    "recipe_id": 1,
+    "recipe_name": "Classic Spinach & Mushroom Omelette",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Keto",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      3,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 15,
+    "calories": 468.9,
+    "protein_g": 29.8,
+    "carbohydrates_g": 5.4,
+    "fat_g": 36.8,
+    "estimated_cost_usd": 2.63,
+    "ingredients": [
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 3.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 0,
+        "name": "Spinach",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 1,
+        "name": "Mushrooms",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 14,
+        "name": "Butter",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 11,
+        "name": "Cheddar Cheese",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 2,
+    "recipe_name": "Greek Yogurt Berry Nut Bowl",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 5,
+    "calories": 449.8,
+    "protein_g": 26.1,
+    "carbohydrates_g": 41.6,
+    "fat_g": 22.8,
+    "estimated_cost_usd": 4.12,
+    "ingredients": [
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 30,
+        "name": "Blueberries",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 27,
+        "name": "Almonds",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 20.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 3,
+    "recipe_name": "Avocado & Egg Whole Wheat Toast",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      5
+    ],
+    "preparation_time_min": 10,
+    "calories": 639.6,
+    "protein_g": 24.0,
+    "carbohydrates_g": 43.1,
+    "fat_g": 43.7,
+    "estimated_cost_usd": 2.64,
+    "ingredients": [
+      {
+        "ingredient_id": 13,
+        "name": "Whole Wheat Bread",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 40.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 4,
+    "recipe_name": "Peanut Butter Banana Oatmeal",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      6,
+      5
+    ],
+    "preparation_time_min": 10,
+    "calories": 656.7,
+    "protein_g": 25.4,
+    "carbohydrates_g": 84.5,
+    "fat_g": 27.5,
+    "estimated_cost_usd": 1.38,
+    "ingredients": [
+      {
+        "ingredient_id": 21,
+        "name": "Rolled Oats",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 3,
+        "name": "Whole Milk",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 31,
+        "name": "Bananas",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 24,
+        "name": "Peanut Butter",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 28,
+        "name": "Chia Seeds",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 5,
+    "recipe_name": "High-Protein Tofu Breakfast Scramble",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      4,
+      5
+    ],
+    "preparation_time_min": 15,
+    "calories": 314.7,
+    "protein_g": 17.1,
+    "carbohydrates_g": 12.3,
+    "fat_g": 24.1,
+    "estimated_cost_usd": 2.79,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 180.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 0,
+        "name": "Spinach",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 17,
+        "name": "Onions",
+        "quantity": 40.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 6,
+    "recipe_name": "Berry Chia Yogurt Parfait",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      5
+    ],
+    "preparation_time_min": 5,
+    "calories": 449.5,
+    "protein_g": 24.1,
+    "carbohydrates_g": 34.1,
+    "fat_g": 26.9,
+    "estimated_cost_usd": 3.46,
+    "ingredients": [
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 180.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 28,
+        "name": "Chia Seeds",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 33,
+        "name": "Walnuts",
+        "quantity": 20.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 7,
+    "recipe_name": "Grilled Chicken & Quinoa Harvest Bowl",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 25,
+    "calories": 587.1,
+    "protein_g": 62.9,
+    "carbohydrates_g": 30.6,
+    "fat_g": 23.4,
+    "estimated_cost_usd": 4.39,
+    "ingredients": [
+      {
+        "ingredient_id": 2,
+        "name": "Chicken Breast",
+        "quantity": 180.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 34,
+        "name": "Quinoa",
+        "quantity": 70.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 16,
+        "name": "Carrots",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 8,
+    "recipe_name": "Mediterranean Chickpea & Avocado Salad",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": 12,
+    "calories": 591.0,
+    "protein_g": 15.1,
+    "carbohydrates_g": 51.1,
+    "fat_g": 40.4,
+    "estimated_cost_usd": 3.71,
+    "ingredients": [
+      {
+        "ingredient_id": 26,
+        "name": "Chickpeas (Canned)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 35,
+        "name": "Cucumber",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 36,
+        "name": "Lemons",
+        "quantity": 1.0,
+        "unit": "count"
+      }
+    ]
+  },
+  {
+    "recipe_id": 9,
+    "recipe_name": "Tuna Salad Whole Wheat Wrap",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      4,
+      5
+    ],
+    "preparation_time_min": 10,
+    "calories": 434.9,
+    "protein_g": 43.2,
+    "carbohydrates_g": 48.2,
+    "fat_g": 7.7,
+    "estimated_cost_usd": 2.88,
+    "ingredients": [
+      {
+        "ingredient_id": 37,
+        "name": "Tuna (Canned)",
+        "quantity": 130.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 38,
+        "name": "Tortillas",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 39,
+        "name": "Lettuce",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 10,
+    "recipe_name": "Black Bean Burrito Bowl with Brown Rice",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": 20,
+    "calories": 412.1,
+    "protein_g": 16.0,
+    "carbohydrates_g": 62.2,
+    "fat_g": 11.9,
+    "estimated_cost_usd": 2.34,
+    "ingredients": [
+      {
+        "ingredient_id": 40,
+        "name": "Black Beans (Canned)",
+        "quantity": 160.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 20,
+        "name": "Brown Rice",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 70.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 17,
+        "name": "Onions",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 11,
+    "recipe_name": "Creamy Tomato & Mozzarella Penne",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Vegetarian",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      5
+    ],
+    "preparation_time_min": 20,
+    "calories": 470.7,
+    "protein_g": 22.1,
+    "carbohydrates_g": 43.5,
+    "fat_g": 24.2,
+    "estimated_cost_usd": 2.25,
+    "ingredients": [
+      {
+        "ingredient_id": 22,
+        "name": "Pasta (Spaghetti/Penne)",
+        "quantity": 90.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 41,
+        "name": "Tomato Sauce",
+        "quantity": 120.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 12,
+        "name": "Mozzarella",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 0,
+        "name": "Spinach",
+        "quantity": 40.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 12,
+    "recipe_name": "Turkey Avocado BLT Wrap",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      4,
+      5
+    ],
+    "preparation_time_min": 15,
+    "calories": 841.7,
+    "protein_g": 50.7,
+    "carbohydrates_g": 60.5,
+    "fat_g": 47.8,
+    "estimated_cost_usd": 4.86,
+    "ingredients": [
+      {
+        "ingredient_id": 42,
+        "name": "Ground Turkey",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 38,
+        "name": "Tortillas",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 39,
+        "name": "Lettuce",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 13,
+    "recipe_name": "Pan-Seared Salmon with Garlic Butter Broccoli & Sweet Potato",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 30,
+    "calories": 789.3,
+    "protein_g": 47.7,
+    "carbohydrates_g": 51.5,
+    "fat_g": 43.1,
+    "estimated_cost_usd": 7.68,
+    "ingredients": [
+      {
+        "ingredient_id": 43,
+        "name": "Salmon Fillet",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 44,
+        "name": "Sweet Potatoes",
+        "quantity": 180.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 120.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 14,
+        "name": "Butter",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 36,
+        "name": "Lemons",
+        "quantity": 1.0,
+        "unit": "count"
+      }
+    ]
+  },
+  {
+    "recipe_id": 14,
+    "recipe_name": "Lean Ground Beef Stir-Fry with Brown Rice & Peppers",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Gluten-Free",
+      "Dairy-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      6,
+      4,
+      5
+    ],
+    "preparation_time_min": 25,
+    "calories": 613.1,
+    "protein_g": 52.6,
+    "carbohydrates_g": 33.1,
+    "fat_g": 31.8,
+    "estimated_cost_usd": 4.62,
+    "ingredients": [
+      {
+        "ingredient_id": 15,
+        "name": "Ground Beef",
+        "quantity": 180.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 20,
+        "name": "Brown Rice",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 17,
+        "name": "Onions",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 29,
+        "name": "Soy Sauce",
+        "quantity": 20.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 15,
+    "recipe_name": "Creamy Garlic Parmesan Chicken Fettuccine",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      4,
+      5
+    ],
+    "preparation_time_min": 30,
+    "calories": 924.0,
+    "protein_g": 77.1,
+    "carbohydrates_g": 35.8,
+    "fat_g": 51.3,
+    "estimated_cost_usd": 4.39,
+    "ingredients": [
+      {
+        "ingredient_id": 2,
+        "name": "Chicken Breast",
+        "quantity": 180.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 22,
+        "name": "Pasta (Spaghetti/Penne)",
+        "quantity": 90.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 45,
+        "name": "Heavy Cream",
+        "quantity": 60.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 46,
+        "name": "Parmesan Cheese",
+        "quantity": 35.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 14,
+        "name": "Butter",
+        "quantity": 15.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 16,
+    "recipe_name": "Hearty Lentil & Vegetable Stew",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": 35,
+    "calories": 457.8,
+    "protein_g": 16.3,
+    "carbohydrates_g": 65.7,
+    "fat_g": 16.1,
+    "estimated_cost_usd": 2.17,
+    "ingredients": [
+      {
+        "ingredient_id": 47,
+        "name": "Lentils",
+        "quantity": 120.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 16,
+        "name": "Carrots",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 48,
+        "name": "Potatoes",
+        "quantity": 120.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 17,
+        "name": "Onions",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 17,
+    "recipe_name": "Garlic Butter Shrimp with Zucchini Noodles & Tomatoes",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Keto",
+      "Gluten-Free",
+      "High-Protein",
+      "Low-Carb",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      3,
+      2,
+      4,
+      7,
+      5
+    ],
+    "preparation_time_min": 20,
+    "calories": 516.5,
+    "protein_g": 61.5,
+    "carbohydrates_g": 15.1,
+    "fat_g": 24.8,
+    "estimated_cost_usd": 7.18,
+    "ingredients": [
+      {
+        "ingredient_id": 49,
+        "name": "Shrimp",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 50,
+        "name": "Zucchini",
+        "quantity": 180.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 14,
+        "name": "Butter",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 46,
+        "name": "Parmesan Cheese",
+        "quantity": 25.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 18,
+    "recipe_name": "Savory Tofu & Mushroom Teriyaki Bowl",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      6,
+      5
+    ],
+    "preparation_time_min": 25,
+    "calories": 454.9,
+    "protein_g": 25.5,
+    "carbohydrates_g": 49.0,
+    "fat_g": 20.6,
+    "estimated_cost_usd": 4.03,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 19,
+        "name": "White Rice",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 1,
+        "name": "Mushrooms",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 29,
+        "name": "Soy Sauce",
+        "quantity": 25.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 19,
+    "recipe_name": "Apple Slices with Natural Peanut Butter",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": 3,
+    "calories": 299.4,
+    "protein_g": 9.3,
+    "carbohydrates_g": 31.8,
+    "fat_g": 17.9,
+    "estimated_cost_usd": 1.03,
+    "ingredients": [
+      {
+        "ingredient_id": 51,
+        "name": "Apples",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 24,
+        "name": "Peanut Butter",
+        "quantity": 35.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 20,
+    "recipe_name": "Banana Almond Protein Smoothie",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      5
+    ],
+    "preparation_time_min": 5,
+    "calories": 440.4,
+    "protein_g": 19.4,
+    "carbohydrates_g": 51.4,
+    "fat_g": 20.3,
+    "estimated_cost_usd": 2.01,
+    "ingredients": [
+      {
+        "ingredient_id": 31,
+        "name": "Bananas",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 3,
+        "name": "Whole Milk",
+        "quantity": 180.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 27,
+        "name": "Almonds",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 21,
+    "recipe_name": "Cheddar Cheese & Boiled Egg Power Snack",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegetarian",
+      "Keto",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      3,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 8,
+    "calories": 241.8,
+    "protein_g": 16.7,
+    "carbohydrates_g": 3.1,
+    "fat_g": 18.1,
+    "estimated_cost_usd": 1.08,
+    "ingredients": [
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 11,
+        "name": "Cheddar Cheese",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 35,
+        "name": "Cucumber",
+        "quantity": 60.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 22,
+    "recipe_name": "Strawberries & Dark Chocolate Walnut Cup",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      5
+    ],
+    "preparation_time_min": 4,
+    "calories": 258.6,
+    "protein_g": 5.3,
+    "carbohydrates_g": 20.0,
+    "fat_g": 19.9,
+    "estimated_cost_usd": 2.22,
+    "ingredients": [
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 33,
+        "name": "Walnuts",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 23,
+    "recipe_name": "Savory Cheddar Cheese & Boiled Egg Power Snack Style 23",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegetarian",
+      "Keto",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      3,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 5,
+    "calories": 220.2,
+    "protein_g": 15.4,
+    "carbohydrates_g": 2.7,
+    "fat_g": 16.4,
+    "estimated_cost_usd": 0.97,
+    "ingredients": [
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 11,
+        "name": "Cheddar Cheese",
+        "quantity": 35.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 35,
+        "name": "Cucumber",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 24,
+    "recipe_name": "Crispy Apple Slices with Natural Peanut Butter Style 24",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": -2,
+    "calories": 270.0,
+    "protein_g": 8.0,
+    "carbohydrates_g": 30.8,
+    "fat_g": 15.4,
+    "estimated_cost_usd": 0.99,
+    "ingredients": [
+      {
+        "ingredient_id": 51,
+        "name": "Apples",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 24,
+        "name": "Peanut Butter",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 25,
+    "recipe_name": "Hearty Savory Tofu & Mushroom Teriyaki Bowl Style 25",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      6,
+      5
+    ],
+    "preparation_time_min": 28,
+    "calories": 542.2,
+    "protein_g": 25.5,
+    "carbohydrates_g": 68.4,
+    "fat_g": 21.3,
+    "estimated_cost_usd": 3.86,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 220.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 19,
+        "name": "White Rice",
+        "quantity": 90.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 1,
+        "name": "Mushrooms",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 44,
+        "name": "Sweet Potatoes",
+        "quantity": 95.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 29,
+        "name": "Soy Sauce",
+        "quantity": 20.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 26,
+    "recipe_name": "Hearty High-Protein Tofu Breakfast Scramble Style 26",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      4,
+      5
+    ],
+    "preparation_time_min": 11,
+    "calories": 298.7,
+    "protein_g": 20.1,
+    "carbohydrates_g": 12.7,
+    "fat_g": 20.9,
+    "estimated_cost_usd": 2.92,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 220.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 0,
+        "name": "Spinach",
+        "quantity": 55.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 17,
+        "name": "Onions",
+        "quantity": 45.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 27,
+    "recipe_name": "Roasted Creamy Garlic Parmesan Chicken Fettuccine Style 27",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      4,
+      5
+    ],
+    "preparation_time_min": 31,
+    "calories": 861.1,
+    "protein_g": 65.1,
+    "carbohydrates_g": 41.4,
+    "fat_g": 47.4,
+    "estimated_cost_usd": 3.8,
+    "ingredients": [
+      {
+        "ingredient_id": 2,
+        "name": "Chicken Breast",
+        "quantity": 145.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 22,
+        "name": "Pasta (Spaghetti/Penne)",
+        "quantity": 110.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 45,
+        "name": "Heavy Cream",
+        "quantity": 45.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 46,
+        "name": "Parmesan Cheese",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 14,
+        "name": "Butter",
+        "quantity": 20.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 28,
+    "recipe_name": "Zesty Avocado & Egg Whole Wheat Toast Style 28",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      5
+    ],
+    "preparation_time_min": 19,
+    "calories": 640.5,
+    "protein_g": 24.0,
+    "carbohydrates_g": 43.3,
+    "fat_g": 43.7,
+    "estimated_cost_usd": 2.67,
+    "ingredients": [
+      {
+        "ingredient_id": 13,
+        "name": "Whole Wheat Bread",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 45.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 29,
+    "recipe_name": "Golden Cheddar Cheese & Boiled Egg Power Snack Style 29",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegetarian",
+      "Keto",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      3,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 5,
+    "calories": 222.4,
+    "protein_g": 15.5,
+    "carbohydrates_g": 3.2,
+    "fat_g": 16.4,
+    "estimated_cost_usd": 1.04,
+    "ingredients": [
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 11,
+        "name": "Cheddar Cheese",
+        "quantity": 35.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 35,
+        "name": "Cucumber",
+        "quantity": 65.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 30,
+    "recipe_name": "Fiesta Banana Almond Protein Smoothie Style 30",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      5
+    ],
+    "preparation_time_min": 7,
+    "calories": 438.1,
+    "protein_g": 18.5,
+    "carbohydrates_g": 51.9,
+    "fat_g": 20.2,
+    "estimated_cost_usd": 1.95,
+    "ingredients": [
+      {
+        "ingredient_id": 31,
+        "name": "Bananas",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 3,
+        "name": "Whole Milk",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 65.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 27,
+        "name": "Almonds",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 31,
+    "recipe_name": "Golden Strawberries & Dark Chocolate Walnut Cup Style 31",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      5
+    ],
+    "preparation_time_min": 7,
+    "calories": 173.6,
+    "protein_g": 0.9,
+    "carbohydrates_g": 45.9,
+    "fat_g": 0.3,
+    "estimated_cost_usd": 2.27,
+    "ingredients": [
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 115.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 35.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 32,
+    "recipe_name": "Hearty Avocado & Egg Whole Wheat Toast Style 32",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      5
+    ],
+    "preparation_time_min": 19,
+    "calories": 639.6,
+    "protein_g": 24.0,
+    "carbohydrates_g": 43.1,
+    "fat_g": 43.7,
+    "estimated_cost_usd": 2.64,
+    "ingredients": [
+      {
+        "ingredient_id": 13,
+        "name": "Whole Wheat Bread",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 40.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 33,
+    "recipe_name": "Rustic High-Protein Tofu Breakfast Scramble Style 33",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      4,
+      5
+    ],
+    "preparation_time_min": 21,
+    "calories": 293.0,
+    "protein_g": 14.8,
+    "carbohydrates_g": 11.9,
+    "fat_g": 22.6,
+    "estimated_cost_usd": 2.6,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 0,
+        "name": "Spinach",
+        "quantity": 65.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 17,
+        "name": "Onions",
+        "quantity": 40.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 34,
+    "recipe_name": "Herb-Crusted Mediterranean Chickpea & Avocado Salad Style 34",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": 9,
+    "calories": 585.1,
+    "protein_g": 14.8,
+    "carbohydrates_g": 49.8,
+    "fat_g": 40.4,
+    "estimated_cost_usd": 3.51,
+    "ingredients": [
+      {
+        "ingredient_id": 26,
+        "name": "Chickpeas (Canned)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 35,
+        "name": "Cucumber",
+        "quantity": 65.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 36,
+        "name": "Lemons",
+        "quantity": 1.0,
+        "unit": "count"
+      }
+    ]
+  },
+  {
+    "recipe_id": 35,
+    "recipe_name": "Crispy Pan-Seared Salmon with Garlic Butter Broccoli & Sweet Potato Style 35",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 28,
+    "calories": 1258.4,
+    "protein_g": 54.2,
+    "carbohydrates_g": 70.0,
+    "fat_g": 88.3,
+    "estimated_cost_usd": 10.2,
+    "ingredients": [
+      {
+        "ingredient_id": 43,
+        "name": "Salmon Fillet",
+        "quantity": 210.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 44,
+        "name": "Sweet Potatoes",
+        "quantity": 175.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 105.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 14,
+        "name": "Butter",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 36,
+        "name": "Lemons",
+        "quantity": 1.0,
+        "unit": "count"
+      }
+    ]
+  },
+  {
+    "recipe_id": 36,
+    "recipe_name": "Crispy Black Bean Burrito Bowl with Brown Rice Style 36",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": 18,
+    "calories": 369.2,
+    "protein_g": 13.9,
+    "carbohydrates_g": 54.2,
+    "fat_g": 11.7,
+    "estimated_cost_usd": 2.32,
+    "ingredients": [
+      {
+        "ingredient_id": 40,
+        "name": "Black Beans (Canned)",
+        "quantity": 135.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 20,
+        "name": "Brown Rice",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 17,
+        "name": "Onions",
+        "quantity": 55.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 37,
+    "recipe_name": "Rustic Cheddar Cheese & Boiled Egg Power Snack Style 37",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegetarian",
+      "Keto",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      3,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 8,
+    "calories": 240.3,
+    "protein_g": 16.7,
+    "carbohydrates_g": 2.7,
+    "fat_g": 18.1,
+    "estimated_cost_usd": 1.03,
+    "ingredients": [
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 11,
+        "name": "Cheddar Cheese",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 35,
+        "name": "Cucumber",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 38,
+    "recipe_name": "Smoky Savory Tofu & Mushroom Teriyaki Bowl Style 38",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      6,
+      5
+    ],
+    "preparation_time_min": 27,
+    "calories": 503.2,
+    "protein_g": 28.8,
+    "carbohydrates_g": 53.9,
+    "fat_g": 22.6,
+    "estimated_cost_usd": 4.42,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 240.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 19,
+        "name": "White Rice",
+        "quantity": 95.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 1,
+        "name": "Mushrooms",
+        "quantity": 85.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 29,
+        "name": "Soy Sauce",
+        "quantity": 20.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 39,
+    "recipe_name": "Hearty Greek Yogurt Berry Nut Bowl Style 39",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 4,
+    "calories": 478.7,
+    "protein_g": 30.2,
+    "carbohydrates_g": 40.4,
+    "fat_g": 24.8,
+    "estimated_cost_usd": 4.5,
+    "ingredients": [
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 240.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 30,
+        "name": "Blueberries",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 27,
+        "name": "Almonds",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 15.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 40,
+    "recipe_name": "Fiesta High-Protein Tofu Breakfast Scramble Style 40",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      4,
+      5
+    ],
+    "preparation_time_min": 19,
+    "calories": 350.2,
+    "protein_g": 17.8,
+    "carbohydrates_g": 9.6,
+    "fat_g": 29.1,
+    "estimated_cost_usd": 3.18,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 180.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 0,
+        "name": "Spinach",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 45.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 20.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 1,
+        "name": "Mushrooms",
+        "quantity": 40.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 41,
+    "recipe_name": "Fiesta Pan-Seared Salmon with Garlic Butter Broccoli & Sweet Potato Style 41",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 32,
+    "calories": 780.4,
+    "protein_g": 50.6,
+    "carbohydrates_g": 50.5,
+    "fat_g": 41.0,
+    "estimated_cost_usd": 8.0,
+    "ingredients": [
+      {
+        "ingredient_id": 43,
+        "name": "Salmon Fillet",
+        "quantity": 215.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 44,
+        "name": "Sweet Potatoes",
+        "quantity": 175.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 120.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 14,
+        "name": "Butter",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 36,
+        "name": "Lemons",
+        "quantity": 1.0,
+        "unit": "count"
+      }
+    ]
+  },
+  {
+    "recipe_id": 42,
+    "recipe_name": "Hearty Apple Slices with Natural Peanut Butter Style 42",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": 0,
+    "calories": 328.8,
+    "protein_g": 10.5,
+    "carbohydrates_g": 32.8,
+    "fat_g": 20.4,
+    "estimated_cost_usd": 1.07,
+    "ingredients": [
+      {
+        "ingredient_id": 51,
+        "name": "Apples",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 24,
+        "name": "Peanut Butter",
+        "quantity": 40.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 43,
+    "recipe_name": "Golden Greek Yogurt Berry Nut Bowl Style 43",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 15,
+    "calories": 357.9,
+    "protein_g": 20.5,
+    "carbohydrates_g": 33.7,
+    "fat_g": 18.0,
+    "estimated_cost_usd": 3.5,
+    "ingredients": [
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 155.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 30,
+        "name": "Blueberries",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 55.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 27,
+        "name": "Almonds",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 15.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 44,
+    "recipe_name": "Smoky Mediterranean Chickpea & Avocado Salad Style 44",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      5
+    ],
+    "preparation_time_min": 8,
+    "calories": 587.5,
+    "protein_g": 14.9,
+    "carbohydrates_g": 50.4,
+    "fat_g": 40.4,
+    "estimated_cost_usd": 3.59,
+    "ingredients": [
+      {
+        "ingredient_id": 26,
+        "name": "Chickpeas (Canned)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 35,
+        "name": "Cucumber",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 65.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 36,
+        "name": "Lemons",
+        "quantity": 1.0,
+        "unit": "count"
+      }
+    ]
+  },
+  {
+    "recipe_id": 45,
+    "recipe_name": "Fiesta Strawberries & Dark Chocolate Walnut Cup Style 45",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      5
+    ],
+    "preparation_time_min": 5,
+    "calories": 221.4,
+    "protein_g": 7.7,
+    "carbohydrates_g": 15.8,
+    "fat_g": 16.7,
+    "estimated_cost_usd": 2.12,
+    "ingredients": [
+      {
+        "ingredient_id": 1,
+        "name": "Mushrooms",
+        "quantity": 125.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 33,
+        "name": "Walnuts",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 46,
+    "recipe_name": "Roasted Grilled Chicken & Quinoa Harvest Bowl Style 46",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 23,
+    "calories": 609.6,
+    "protein_g": 60.7,
+    "carbohydrates_g": 27.9,
+    "fat_g": 28.0,
+    "estimated_cost_usd": 4.25,
+    "ingredients": [
+      {
+        "ingredient_id": 2,
+        "name": "Chicken Breast",
+        "quantity": 175.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 34,
+        "name": "Quinoa",
+        "quantity": 65.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 90.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 16,
+        "name": "Carrots",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 20.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 47,
+    "recipe_name": "Fiesta Greek Yogurt Berry Nut Bowl Style 47",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 6,
+    "calories": 468.8,
+    "protein_g": 26.1,
+    "carbohydrates_g": 69.1,
+    "fat_g": 12.9,
+    "estimated_cost_usd": 4.82,
+    "ingredients": [
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 250.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 30,
+        "name": "Blueberries",
+        "quantity": 70.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 25.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 48,
+    "recipe_name": "Zesty Pan-Seared Salmon with Garlic Butter Broccoli & Sweet Potato Style 48",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 40,
+    "calories": 712.0,
+    "protein_g": 39.9,
+    "carbohydrates_g": 42.1,
+    "fat_g": 42.5,
+    "estimated_cost_usd": 6.6,
+    "ingredients": [
+      {
+        "ingredient_id": 43,
+        "name": "Salmon Fillet",
+        "quantity": 165.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 44,
+        "name": "Sweet Potatoes",
+        "quantity": 135.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 115.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 14,
+        "name": "Butter",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 36,
+        "name": "Lemons",
+        "quantity": 1.0,
+        "unit": "count"
+      }
+    ]
+  },
+  {
+    "recipe_id": 49,
+    "recipe_name": "Hearty High-Protein Tofu Breakfast Scramble Style 49",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      2,
+      6,
+      4,
+      5
+    ],
+    "preparation_time_min": 15,
+    "calories": 301.4,
+    "protein_g": 15.8,
+    "carbohydrates_g": 12.2,
+    "fat_g": 23.3,
+    "estimated_cost_usd": 3.33,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 160.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 0,
+        "name": "Spinach",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 45.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 50,
+    "recipe_name": "Roasted Greek Yogurt Berry Nut Bowl Style 50",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 1,
+    "calories": 352.4,
+    "protein_g": 23.2,
+    "carbohydrates_g": 23.0,
+    "fat_g": 20.9,
+    "estimated_cost_usd": 3.5,
+    "ingredients": [
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 160.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 30,
+        "name": "Blueberries",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 27,
+        "name": "Almonds",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 29,
+        "name": "Soy Sauce",
+        "quantity": 15.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 51,
+    "recipe_name": "Savory Banana Almond Protein Smoothie Style 51",
+    "category": "Snack",
+    "category_id": 3,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      5
+    ],
+    "preparation_time_min": 7,
+    "calories": 475.4,
+    "protein_g": 20.7,
+    "carbohydrates_g": 53.0,
+    "fat_g": 23.1,
+    "estimated_cost_usd": 2.13,
+    "ingredients": [
+      {
+        "ingredient_id": 31,
+        "name": "Bananas",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 3,
+        "name": "Whole Milk",
+        "quantity": 190.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 27,
+        "name": "Almonds",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 52,
+    "recipe_name": "Crispy Tuna Salad Whole Wheat Wrap Style 52",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      4,
+      5
+    ],
+    "preparation_time_min": 8,
+    "calories": 497.6,
+    "protein_g": 34.9,
+    "carbohydrates_g": 48.4,
+    "fat_g": 18.6,
+    "estimated_cost_usd": 2.71,
+    "ingredients": [
+      {
+        "ingredient_id": 37,
+        "name": "Tuna (Canned)",
+        "quantity": 105.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 38,
+        "name": "Tortillas",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 39,
+        "name": "Lettuce",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 45,
+        "name": "Heavy Cream",
+        "quantity": 35.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 53,
+    "recipe_name": "Roasted Avocado & Egg Whole Wheat Toast Style 53",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      5
+    ],
+    "preparation_time_min": 10,
+    "calories": 641.4,
+    "protein_g": 24.1,
+    "carbohydrates_g": 43.5,
+    "fat_g": 43.8,
+    "estimated_cost_usd": 2.7,
+    "ingredients": [
+      {
+        "ingredient_id": 13,
+        "name": "Whole Wheat Bread",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 6,
+        "name": "Avocado",
+        "quantity": 1.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 7,
+        "name": "Eggs",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 54,
+    "recipe_name": "Roasted Creamy Garlic Parmesan Chicken Fettuccine Style 54",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      4,
+      5
+    ],
+    "preparation_time_min": 29,
+    "calories": 931.5,
+    "protein_g": 85.9,
+    "carbohydrates_g": 37.0,
+    "fat_g": 47.2,
+    "estimated_cost_usd": 4.78,
+    "ingredients": [
+      {
+        "ingredient_id": 2,
+        "name": "Chicken Breast",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 22,
+        "name": "Pasta (Spaghetti/Penne)",
+        "quantity": 95.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 45,
+        "name": "Heavy Cream",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 46,
+        "name": "Parmesan Cheese",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 3,
+        "name": "Whole Milk",
+        "quantity": 15.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 55,
+    "recipe_name": "Savory Tuna Salad Whole Wheat Wrap Style 55",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      4,
+      5
+    ],
+    "preparation_time_min": 20,
+    "calories": 472.1,
+    "protein_g": 48.7,
+    "carbohydrates_g": 51.7,
+    "fat_g": 7.7,
+    "estimated_cost_usd": 3.46,
+    "ingredients": [
+      {
+        "ingredient_id": 37,
+        "name": "Tuna (Canned)",
+        "quantity": 155.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 38,
+        "name": "Tortillas",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 30,
+        "name": "Blueberries",
+        "quantity": 35.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 45.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 25.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 56,
+    "recipe_name": "Zesty Tuna Salad Whole Wheat Wrap Style 56",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      4,
+      5
+    ],
+    "preparation_time_min": 13,
+    "calories": 408.2,
+    "protein_g": 37.1,
+    "carbohydrates_g": 47.8,
+    "fat_g": 7.7,
+    "estimated_cost_usd": 2.53,
+    "ingredients": [
+      {
+        "ingredient_id": 37,
+        "name": "Tuna (Canned)",
+        "quantity": 105.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 38,
+        "name": "Tortillas",
+        "quantity": 2.0,
+        "unit": "count"
+      },
+      {
+        "ingredient_id": 39,
+        "name": "Lettuce",
+        "quantity": 35.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 9,
+        "name": "Tomatoes",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 35.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 57,
+    "recipe_name": "Garden-Fresh Berry Chia Yogurt Parfait Style 57",
+    "category": "Breakfast",
+    "category_id": 0,
+    "dietary_tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      0,
+      2,
+      5
+    ],
+    "preparation_time_min": 4,
+    "calories": 465.3,
+    "protein_g": 24.4,
+    "carbohydrates_g": 31.2,
+    "fat_g": 29.9,
+    "estimated_cost_usd": 3.61,
+    "ingredients": [
+      {
+        "ingredient_id": 5,
+        "name": "Greek Yogurt",
+        "quantity": 175.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 4,
+        "name": "Strawberries",
+        "quantity": 90.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 28,
+        "name": "Chia Seeds",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 33,
+        "name": "Walnuts",
+        "quantity": 25.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 58,
+    "recipe_name": "Zesty Savory Tofu & Mushroom Teriyaki Bowl Style 58",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Vegan",
+      "Vegetarian",
+      "Dairy-Free",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      1,
+      0,
+      6,
+      5
+    ],
+    "preparation_time_min": 31,
+    "calories": 493.1,
+    "protein_g": 27.4,
+    "carbohydrates_g": 53.4,
+    "fat_g": 22.2,
+    "estimated_cost_usd": 4.07,
+    "ingredients": [
+      {
+        "ingredient_id": 32,
+        "name": "Tofu",
+        "quantity": 235.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 19,
+        "name": "White Rice",
+        "quantity": 85.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 1,
+        "name": "Mushrooms",
+        "quantity": 65.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 29,
+        "name": "Soy Sauce",
+        "quantity": 25.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 25,
+        "name": "Honey",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "recipe_id": 59,
+    "recipe_name": "Fiesta Grilled Chicken & Quinoa Harvest Bowl Style 59",
+    "category": "Lunch",
+    "category_id": 1,
+    "dietary_tags": [
+      "Gluten-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      4,
+      5
+    ],
+    "preparation_time_min": 25,
+    "calories": 532.1,
+    "protein_g": 54.0,
+    "carbohydrates_g": 30.3,
+    "fat_g": 21.7,
+    "estimated_cost_usd": 3.78,
+    "ingredients": [
+      {
+        "ingredient_id": 2,
+        "name": "Chicken Breast",
+        "quantity": 155.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 20,
+        "name": "Brown Rice",
+        "quantity": 55.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 10,
+        "name": "Broccoli",
+        "quantity": 115.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 16,
+        "name": "Carrots",
+        "quantity": 70.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 23,
+        "name": "Olive Oil",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "recipe_id": 60,
+    "recipe_name": "Zesty Lean Ground Beef Stir-Fry with Brown Rice & Peppers Style 60",
+    "category": "Dinner",
+    "category_id": 2,
+    "dietary_tags": [
+      "Gluten-Free",
+      "Dairy-Free",
+      "High-Protein",
+      "Halal"
+    ],
+    "dietary_tag_ids": [
+      2,
+      6,
+      4,
+      5
+    ],
+    "preparation_time_min": 32,
+    "calories": 573.9,
+    "protein_g": 45.3,
+    "carbohydrates_g": 41.4,
+    "fat_g": 26.3,
+    "estimated_cost_usd": 4.11,
+    "ingredients": [
+      {
+        "ingredient_id": 15,
+        "name": "Ground Beef",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 19,
+        "name": "White Rice",
+        "quantity": 95.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 8,
+        "name": "Bell Peppers",
+        "quantity": 90.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 17,
+        "name": "Onions",
+        "quantity": 55.0,
+        "unit": "g"
+      },
+      {
+        "ingredient_id": 29,
+        "name": "Soy Sauce",
+        "quantity": 20.0,
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": 18,
+        "name": "Garlic",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ]
+  }
+]

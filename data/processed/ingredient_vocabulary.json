@@ -1,0 +1,366 @@
+{
+  "spinach": {
+    "id": 0,
+    "canonical_name": "Spinach",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.01
+  },
+  "mushrooms": {
+    "id": 1,
+    "canonical_name": "Mushrooms",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.012
+  },
+  "chicken breast": {
+    "id": 2,
+    "canonical_name": "Chicken Breast",
+    "unit": "g",
+    "category": "Protein",
+    "estimated_unit_cost": 0.014
+  },
+  "whole milk": {
+    "id": 3,
+    "canonical_name": "Whole Milk",
+    "unit": "ml",
+    "category": "Dairy",
+    "estimated_unit_cost": 0.003
+  },
+  "strawberries": {
+    "id": 4,
+    "canonical_name": "Strawberries",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.015
+  },
+  "greek yogurt": {
+    "id": 5,
+    "canonical_name": "Greek Yogurt",
+    "unit": "g",
+    "category": "Dairy",
+    "estimated_unit_cost": 0.008
+  },
+  "avocado": {
+    "id": 6,
+    "canonical_name": "Avocado",
+    "unit": "count",
+    "category": "Produce",
+    "estimated_unit_cost": 1.25
+  },
+  "eggs": {
+    "id": 7,
+    "canonical_name": "Eggs",
+    "unit": "count",
+    "category": "Dairy",
+    "estimated_unit_cost": 0.3
+  },
+  "bell peppers": {
+    "id": 8,
+    "canonical_name": "Bell Peppers",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.008
+  },
+  "tomatoes": {
+    "id": 9,
+    "canonical_name": "Tomatoes",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.006
+  },
+  "broccoli": {
+    "id": 10,
+    "canonical_name": "Broccoli",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.007
+  },
+  "cheddar cheese": {
+    "id": 11,
+    "canonical_name": "Cheddar Cheese",
+    "unit": "g",
+    "category": "Dairy",
+    "estimated_unit_cost": 0.012
+  },
+  "mozzarella": {
+    "id": 12,
+    "canonical_name": "Mozzarella",
+    "unit": "g",
+    "category": "Dairy",
+    "estimated_unit_cost": 0.011
+  },
+  "whole wheat bread": {
+    "id": 13,
+    "canonical_name": "Whole Wheat Bread",
+    "unit": "count",
+    "category": "Bakery",
+    "estimated_unit_cost": 0.2
+  },
+  "butter": {
+    "id": 14,
+    "canonical_name": "Butter",
+    "unit": "g",
+    "category": "Dairy",
+    "estimated_unit_cost": 0.01
+  },
+  "ground beef": {
+    "id": 15,
+    "canonical_name": "Ground Beef",
+    "unit": "g",
+    "category": "Protein",
+    "estimated_unit_cost": 0.018
+  },
+  "carrots": {
+    "id": 16,
+    "canonical_name": "Carrots",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.004
+  },
+  "onions": {
+    "id": 17,
+    "canonical_name": "Onions",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.003
+  },
+  "garlic": {
+    "id": 18,
+    "canonical_name": "Garlic",
+    "unit": "g",
+    "category": "Produce",
+    "estimated_unit_cost": 0.008
+  },
+  "white rice": {
+    "id": 19,
+    "canonical_name": "White Rice",
+    "unit": "g",
+    "category": "Grains",
+    "estimated_unit_cost": 0.003
+  },
+  "brown rice": {
+    "id": 20,
+    "canonical_name": "Brown Rice",
+    "unit": "g",
+    "category": "Grains",
+    "estimated_unit_cost": 0.004
+  },
+  "rolled oats": {
+    "id": 21,
+    "canonical_name": "Rolled Oats",
+    "unit": "g",
+    "category": "Grains",
+    "estimated_unit_cost": 0.003
+  },
+  "pasta (spaghetti/penne)": {
+    "id": 22,
+    "canonical_name": "Pasta (Spaghetti/Penne)",
+    "unit": "g",
+    "category": "Grains",
+    "estimated_unit_cost": 0.004
+  },
+  "olive oil": {
+    "id": 23,
+    "canonical_name": "Olive Oil",
+    "unit": "ml",
+    "category": "Pantry",
+    "estimated_unit_cost": 0.015
+  },
+  "peanut butter": {
+    "id": 24,
+    "canonical_name": "Peanut Butter",
+    "unit": "g",
+    "category": "Pantry",
+    "estimated_unit_cost": 0.008
+  },
+  "honey": {
+    "id": 25,
+    "canonical_name": "Honey",
+    "unit": "g",
+    "category": "Pantry",
+    "estimated_unit_cost": 0.012
+  },
+  "chickpeas (canned)": {
+    "id": 26,
+    "canonical_name": "Chickpeas (Canned)",
+    "unit": "g",
+    "category": "Protein",
+    "estimated_unit_cost": 0.005
+  },
+  "almonds": {
+    "id": 27,
+    "canonical_name": "Almonds",
+    "unit": "g",
+    "category": "Pantry",
+    "estimated_unit_cost": 0.018
+  },
+  "chia seeds": {
+    "id": 28,
+    "canonical_name": "Chia Seeds",
+    "unit": "g",
+    "category": "Pantry",
+    "estimated_unit_cost": 0.016
+  },
+  "soy sauce": {
+    "id": 29,
+    "canonical_name": "Soy Sauce",
+    "unit": "ml",
+    "category": "Pantry",
+    "estimated_unit_cost": 0.008
+  },
+  "blueberries": {
+    "id": 30,
+    "canonical_name": "Blueberries",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "bananas": {
+    "id": 31,
+    "canonical_name": "Bananas",
+    "unit": "count",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "tofu": {
+    "id": 32,
+    "canonical_name": "Tofu",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "walnuts": {
+    "id": 33,
+    "canonical_name": "Walnuts",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "quinoa": {
+    "id": 34,
+    "canonical_name": "Quinoa",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "cucumber": {
+    "id": 35,
+    "canonical_name": "Cucumber",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "lemons": {
+    "id": 36,
+    "canonical_name": "Lemons",
+    "unit": "count",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "tuna (canned)": {
+    "id": 37,
+    "canonical_name": "Tuna (Canned)",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "tortillas": {
+    "id": 38,
+    "canonical_name": "Tortillas",
+    "unit": "count",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "lettuce": {
+    "id": 39,
+    "canonical_name": "Lettuce",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "black beans (canned)": {
+    "id": 40,
+    "canonical_name": "Black Beans (Canned)",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "tomato sauce": {
+    "id": 41,
+    "canonical_name": "Tomato Sauce",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "ground turkey": {
+    "id": 42,
+    "canonical_name": "Ground Turkey",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "salmon fillet": {
+    "id": 43,
+    "canonical_name": "Salmon Fillet",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "sweet potatoes": {
+    "id": 44,
+    "canonical_name": "Sweet Potatoes",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "heavy cream": {
+    "id": 45,
+    "canonical_name": "Heavy Cream",
+    "unit": "ml",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "parmesan cheese": {
+    "id": 46,
+    "canonical_name": "Parmesan Cheese",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "lentils": {
+    "id": 47,
+    "canonical_name": "Lentils",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "potatoes": {
+    "id": 48,
+    "canonical_name": "Potatoes",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "shrimp": {
+    "id": 49,
+    "canonical_name": "Shrimp",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "zucchini": {
+    "id": 50,
+    "canonical_name": "Zucchini",
+    "unit": "g",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  },
+  "apples": {
+    "id": 51,
+    "canonical_name": "Apples",
+    "unit": "count",
+    "category": "RecipeIngredient",
+    "estimated_unit_cost": 0.01
+  }
+}

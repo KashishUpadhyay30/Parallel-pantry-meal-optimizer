@@ -1,0 +1,31 @@
+pantry_id,ingredient_name,quantity,unit,days_to_expiry,expiry_date,estimated_unit_cost,category,perishability_hazard
+1,Spinach,180,g,1,2026-09-01,0.01,Produce,5.0
+2,Mushrooms,200,g,2,2026-09-02,0.012,Produce,5.0
+3,Chicken Breast,400,g,2,2026-09-02,0.014,Protein,4.8
+4,Whole Milk,600,ml,2,2026-09-02,0.003,Dairy,4.5
+5,Strawberries,250,g,2,2026-09-02,0.015,Produce,5.0
+6,Greek Yogurt,350,g,3,2026-09-03,0.008,Dairy,4.0
+7,Avocado,3,count,3,2026-09-03,1.25,Produce,4.5
+8,Eggs,8,count,4,2026-09-04,0.3,Dairy,3.5
+9,Bell Peppers,160,g,4,2026-09-04,0.008,Produce,4.0
+10,Tomatoes,300,g,5,2026-09-05,0.006,Produce,4.5
+11,Broccoli,250,g,5,2026-09-05,0.007,Produce,4.0
+12,Cheddar Cheese,150,g,6,2026-09-06,0.012,Dairy,3.0
+13,Mozzarella,120,g,6,2026-09-06,0.011,Dairy,4.0
+14,Whole Wheat Bread,6,count,4,2026-09-04,0.2,Bakery,3.5
+15,Butter,100,g,10,2026-09-10,0.01,Dairy,2.5
+16,Ground Beef,350,g,3,2026-09-03,0.018,Protein,4.8
+17,Carrots,200,g,10,2026-09-10,0.004,Produce,2.5
+18,Onions,300,g,14,2026-09-14,0.003,Produce,2.0
+19,Garlic,50,g,14,2026-09-14,0.008,Produce,2.0
+20,White Rice,500,g,90,2026-11-29,0.003,Grains,1.0
+21,Brown Rice,500,g,90,2026-11-29,0.004,Grains,1.0
+22,Rolled Oats,400,g,60,2026-10-30,0.003,Grains,1.0
+23,Pasta (Spaghetti/Penne),500,g,90,2026-11-29,0.004,Grains,1.0
+24,Olive Oil,400,ml,120,2026-12-29,0.015,Pantry,1.0
+25,Peanut Butter,250,g,60,2026-10-30,0.008,Pantry,1.2
+26,Honey,200,g,180,2027-02-27,0.012,Pantry,1.0
+27,Chickpeas (Canned),400,g,180,2027-02-27,0.005,Protein,1.0
+28,Almonds,150,g,60,2026-10-30,0.018,Pantry,1.5
+29,Chia Seeds,100,g,90,2026-11-29,0.016,Pantry,1.0
+30,Soy Sauce,200,ml,120,2026-12-29,0.008,Pantry,1.0

@@ -1,0 +1,61 @@
+recipe_id,recipe_name,category,category_id,preparation_time_min,calories,protein_g,carbohydrates_g,fat_g,estimated_cost_usd,dietary_tags
+1,Classic Spinach & Mushroom Omelette,Breakfast,0,15,468.9,29.8,5.4,36.8,2.63,Vegetarian;Keto;Gluten-Free;High-Protein;Halal
+2,Greek Yogurt Berry Nut Bowl,Breakfast,0,5,449.8,26.1,41.6,22.8,4.12,Vegetarian;Gluten-Free;High-Protein;Halal
+3,Avocado & Egg Whole Wheat Toast,Breakfast,0,10,639.6,24.0,43.1,43.7,2.64,Vegetarian;Halal
+4,Peanut Butter Banana Oatmeal,Breakfast,0,10,656.7,25.4,84.5,27.5,1.38,Vegan;Vegetarian;Dairy-Free;Halal
+5,High-Protein Tofu Breakfast Scramble,Breakfast,0,15,314.7,17.1,12.3,24.1,2.79,Vegan;Vegetarian;Gluten-Free;Dairy-Free;High-Protein;Halal
+6,Berry Chia Yogurt Parfait,Breakfast,0,5,449.5,24.1,34.1,26.9,3.46,Vegetarian;Gluten-Free;Halal
+7,Grilled Chicken & Quinoa Harvest Bowl,Lunch,1,25,587.1,62.9,30.6,23.4,4.39,Gluten-Free;High-Protein;Halal
+8,Mediterranean Chickpea & Avocado Salad,Lunch,1,12,591.0,15.1,51.1,40.4,3.71,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+9,Tuna Salad Whole Wheat Wrap,Lunch,1,10,434.9,43.2,48.2,7.7,2.88,High-Protein;Halal
+10,Black Bean Burrito Bowl with Brown Rice,Lunch,1,20,412.1,16.0,62.2,11.9,2.34,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+11,Creamy Tomato & Mozzarella Penne,Lunch,1,20,470.7,22.1,43.5,24.2,2.25,Vegetarian;Halal
+12,Turkey Avocado BLT Wrap,Lunch,1,15,841.7,50.7,60.5,47.8,4.86,High-Protein;Halal
+13,Pan-Seared Salmon with Garlic Butter Broccoli & Sweet Potato,Dinner,2,30,789.3,47.7,51.5,43.1,7.68,Gluten-Free;High-Protein;Halal
+14,Lean Ground Beef Stir-Fry with Brown Rice & Peppers,Dinner,2,25,613.1,52.6,33.1,31.8,4.62,Gluten-Free;Dairy-Free;High-Protein;Halal
+15,Creamy Garlic Parmesan Chicken Fettuccine,Dinner,2,30,924.0,77.1,35.8,51.3,4.39,High-Protein;Halal
+16,Hearty Lentil & Vegetable Stew,Dinner,2,35,457.8,16.3,65.7,16.1,2.17,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+17,Garlic Butter Shrimp with Zucchini Noodles & Tomatoes,Dinner,2,20,516.5,61.5,15.1,24.8,7.18,Keto;Gluten-Free;High-Protein;Low-Carb;Halal
+18,Savory Tofu & Mushroom Teriyaki Bowl,Dinner,2,25,454.9,25.5,49.0,20.6,4.03,Vegan;Vegetarian;Dairy-Free;Halal
+19,Apple Slices with Natural Peanut Butter,Snack,3,3,299.4,9.3,31.8,17.9,1.03,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+20,Banana Almond Protein Smoothie,Snack,3,5,440.4,19.4,51.4,20.3,2.01,Vegetarian;Gluten-Free;Halal
+21,Cheddar Cheese & Boiled Egg Power Snack,Snack,3,8,241.8,16.7,3.1,18.1,1.08,Vegetarian;Keto;Gluten-Free;High-Protein;Halal
+22,Strawberries & Dark Chocolate Walnut Cup,Snack,3,4,258.6,5.3,20.0,19.9,2.22,Vegan;Vegetarian;Gluten-Free;Halal
+23,Savory Cheddar Cheese & Boiled Egg Power Snack Style 23,Snack,3,5,220.2,15.4,2.7,16.4,0.97,Vegetarian;Keto;Gluten-Free;High-Protein;Halal
+24,Crispy Apple Slices with Natural Peanut Butter Style 24,Snack,3,-2,270.0,8.0,30.8,15.4,0.99,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+25,Hearty Savory Tofu & Mushroom Teriyaki Bowl Style 25,Dinner,2,28,542.2,25.5,68.4,21.3,3.86,Vegan;Vegetarian;Dairy-Free;Halal
+26,Hearty High-Protein Tofu Breakfast Scramble Style 26,Breakfast,0,11,298.7,20.1,12.7,20.9,2.92,Vegan;Vegetarian;Gluten-Free;Dairy-Free;High-Protein;Halal
+27,Roasted Creamy Garlic Parmesan Chicken Fettuccine Style 27,Dinner,2,31,861.1,65.1,41.4,47.4,3.8,High-Protein;Halal
+28,Zesty Avocado & Egg Whole Wheat Toast Style 28,Breakfast,0,19,640.5,24.0,43.3,43.7,2.67,Vegetarian;Halal
+29,Golden Cheddar Cheese & Boiled Egg Power Snack Style 29,Snack,3,5,222.4,15.5,3.2,16.4,1.04,Vegetarian;Keto;Gluten-Free;High-Protein;Halal
+30,Fiesta Banana Almond Protein Smoothie Style 30,Snack,3,7,438.1,18.5,51.9,20.2,1.95,Vegetarian;Gluten-Free;Halal
+31,Golden Strawberries & Dark Chocolate Walnut Cup Style 31,Snack,3,7,173.6,0.9,45.9,0.3,2.27,Vegan;Vegetarian;Gluten-Free;Halal
+32,Hearty Avocado & Egg Whole Wheat Toast Style 32,Breakfast,0,19,639.6,24.0,43.1,43.7,2.64,Vegetarian;Halal
+33,Rustic High-Protein Tofu Breakfast Scramble Style 33,Breakfast,0,21,293.0,14.8,11.9,22.6,2.6,Vegan;Vegetarian;Gluten-Free;Dairy-Free;High-Protein;Halal
+34,Herb-Crusted Mediterranean Chickpea & Avocado Salad Style 34,Lunch,1,9,585.1,14.8,49.8,40.4,3.51,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+35,Crispy Pan-Seared Salmon with Garlic Butter Broccoli & Sweet Potato Style 35,Dinner,2,28,1258.4,54.2,70.0,88.3,10.2,Gluten-Free;High-Protein;Halal
+36,Crispy Black Bean Burrito Bowl with Brown Rice Style 36,Lunch,1,18,369.2,13.9,54.2,11.7,2.32,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+37,Rustic Cheddar Cheese & Boiled Egg Power Snack Style 37,Snack,3,8,240.3,16.7,2.7,18.1,1.03,Vegetarian;Keto;Gluten-Free;High-Protein;Halal
+38,Smoky Savory Tofu & Mushroom Teriyaki Bowl Style 38,Dinner,2,27,503.2,28.8,53.9,22.6,4.42,Vegan;Vegetarian;Dairy-Free;Halal
+39,Hearty Greek Yogurt Berry Nut Bowl Style 39,Breakfast,0,4,478.7,30.2,40.4,24.8,4.5,Vegetarian;Gluten-Free;High-Protein;Halal
+40,Fiesta High-Protein Tofu Breakfast Scramble Style 40,Breakfast,0,19,350.2,17.8,9.6,29.1,3.18,Vegan;Vegetarian;Gluten-Free;Dairy-Free;High-Protein;Halal
+41,Fiesta Pan-Seared Salmon with Garlic Butter Broccoli & Sweet Potato Style 41,Dinner,2,32,780.4,50.6,50.5,41.0,8.0,Gluten-Free;High-Protein;Halal
+42,Hearty Apple Slices with Natural Peanut Butter Style 42,Snack,3,0,328.8,10.5,32.8,20.4,1.07,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+43,Golden Greek Yogurt Berry Nut Bowl Style 43,Breakfast,0,15,357.9,20.5,33.7,18.0,3.5,Vegetarian;Gluten-Free;High-Protein;Halal
+44,Smoky Mediterranean Chickpea & Avocado Salad Style 44,Lunch,1,8,587.5,14.9,50.4,40.4,3.59,Vegan;Vegetarian;Gluten-Free;Dairy-Free;Halal
+45,Fiesta Strawberries & Dark Chocolate Walnut Cup Style 45,Snack,3,5,221.4,7.7,15.8,16.7,2.12,Vegan;Vegetarian;Gluten-Free;Halal
+46,Roasted Grilled Chicken & Quinoa Harvest Bowl Style 46,Lunch,1,23,609.6,60.7,27.9,28.0,4.25,Gluten-Free;High-Protein;Halal
+47,Fiesta Greek Yogurt Berry Nut Bowl Style 47,Breakfast,0,6,468.8,26.1,69.1,12.9,4.82,Vegetarian;Gluten-Free;High-Protein;Halal
+48,Zesty Pan-Seared Salmon with Garlic Butter Broccoli & Sweet Potato Style 48,Dinner,2,40,712.0,39.9,42.1,42.5,6.6,Gluten-Free;High-Protein;Halal
+49,Hearty High-Protein Tofu Breakfast Scramble Style 49,Breakfast,0,15,301.4,15.8,12.2,23.3,3.33,Vegan;Vegetarian;Gluten-Free;Dairy-Free;High-Protein;Halal
+50,Roasted Greek Yogurt Berry Nut Bowl Style 50,Breakfast,0,1,352.4,23.2,23.0,20.9,3.5,Vegetarian;Gluten-Free;High-Protein;Halal
+51,Savory Banana Almond Protein Smoothie Style 51,Snack,3,7,475.4,20.7,53.0,23.1,2.13,Vegetarian;Gluten-Free;Halal
+52,Crispy Tuna Salad Whole Wheat Wrap Style 52,Lunch,1,8,497.6,34.9,48.4,18.6,2.71,High-Protein;Halal
+53,Roasted Avocado & Egg Whole Wheat Toast Style 53,Breakfast,0,10,641.4,24.1,43.5,43.8,2.7,Vegetarian;Halal
+54,Roasted Creamy Garlic Parmesan Chicken Fettuccine Style 54,Dinner,2,29,931.5,85.9,37.0,47.2,4.78,High-Protein;Halal
+55,Savory Tuna Salad Whole Wheat Wrap Style 55,Lunch,1,20,472.1,48.7,51.7,7.7,3.46,High-Protein;Halal
+56,Zesty Tuna Salad Whole Wheat Wrap Style 56,Lunch,1,13,408.2,37.1,47.8,7.7,2.53,High-Protein;Halal
+57,Garden-Fresh Berry Chia Yogurt Parfait Style 57,Breakfast,0,4,465.3,24.4,31.2,29.9,3.61,Vegetarian;Gluten-Free;Halal
+58,Zesty Savory Tofu & Mushroom Teriyaki Bowl Style 58,Dinner,2,31,493.1,27.4,53.4,22.2,4.07,Vegan;Vegetarian;Dairy-Free;Halal
+59,Fiesta Grilled Chicken & Quinoa Harvest Bowl Style 59,Lunch,1,25,532.1,54.0,30.3,21.7,3.78,Gluten-Free;High-Protein;Halal
+60,Zesty Lean Ground Beef Stir-Fry with Brown Rice & Peppers Style 60,Dinner,2,32,573.9,45.3,41.4,26.3,4.11,Gluten-Free;Dairy-Free;High-Protein;Halal

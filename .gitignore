@@ -1,0 +1,40 @@
+﻿# Build and binaries
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+bin/
+build/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+.eggs/
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Results logs and scratch
+*.log
+scratch/
