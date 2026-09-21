@@ -48,12 +48,15 @@ class RecipeRecommendation(BaseModel):
     carbohydrates_g: float
     fat_g: float
     prep_time_min: int
+    cook_time_min: Optional[int] = 15
     estimated_cost_usd: float
     estimated_cost_inr: Optional[float] = None
     dietary_tags: List[str]
     ingredients_used_from_pantry: List[str]
     missing_ingredients_to_buy: List[str] = []
     optional_suggestions: Optional[List[str]] = []
+    instructions: Optional[List[str]] = []
+    chef_tips: Optional[str] = None
     image_url: Optional[str] = None
 
 

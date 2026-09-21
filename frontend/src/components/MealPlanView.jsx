@@ -1,7 +1,10 @@
-import React from 'react';
-import { Clock, CheckCircle2, Sparkles, Flame, Zap, ChefHat, Leaf, PlusCircle, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Clock, CheckCircle2, Sparkles, Flame, Zap, ChefHat, Leaf, PlusCircle, ArrowRight, X, Utensils, BookOpen, Check, Printer } from 'lucide-react';
 
 export default function MealPlanView({ optimizationResult, isOptimizing, onReoptimize, onNavigatePantry }) {
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [completedSteps, setCompletedSteps] = useState({});
+
   if (!optimizationResult) {
     return (
       <div className="flex flex-col items-center justify-center py-24 text-center bg-white rounded-3xl border border-slate-200 shadow-sm p-8">
@@ -47,6 +50,13 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
     Snack: 'bg-purple-100 text-purple-900 border-purple-200'
   };
 
+  const toggleStep = (stepIdx) => {
+    setCompletedSteps(prev => ({
+      ...prev,
+      [stepIdx]: !prev[stepIdx]
+    }));
+  };
+
   return (
     <div className="space-y-8">
       {/* Hero Welcome Banner */}
@@ -60,7 +70,7 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
             Today's Zero-Waste Meal Schedule
           </h2>
           <p className="text-emerald-100/90 text-sm mt-2 leading-relaxed">
-            100% prepared from your current pantry stock. Rescuing <strong className="text-white">{expiring_items_rescued_count} expiring perishable ingredients</strong> with ₹0 mandatory grocery purchases.
+            100% prepared from your current pantry stock. Rescuing <strong className="text-white">{expiring_items_rescued_count} expiring perishable ingredients</strong> with ₹0 mandatory grocery purchases. Click on any meal to see step-by-step cooking instructions!
           </p>
         </div>
 
@@ -130,7 +140,8 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
           return (
             <div
               key={rec.slot}
-              className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+              onClick={() => { setSelectedRecipe(rec); setCompletedSteps({}); }}
+              className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group cursor-pointer hover:border-emerald-300"
             >
               <div>
                 {/* Real-Life Food Photo Header */}
@@ -141,7 +152,7 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
                   
                   {/* Slot Pill on Image */}
                   <div className="absolute top-3.5 left-3.5">
@@ -153,13 +164,13 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
                   {/* 100% Pantry Sourced Badge */}
                   <div className="absolute top-3.5 right-3.5 bg-emerald-600/90 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-[11px] font-bold flex items-center gap-1 border border-emerald-400/40 shadow-xs">
                     <Leaf className="w-3 h-3 text-emerald-200" />
-                    <span>100% In Stock</span>
+                    <span>100% Pantry Stocked</span>
                   </div>
 
                   {/* Cook time pill on Image */}
                   <div className="absolute bottom-3 right-3.5 bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-lg text-white text-xs font-medium flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>{rec.prep_time_min} mins</span>
+                    <span>{rec.prep_time_min} mins prep</span>
                   </div>
 
                   <div className="absolute bottom-3 left-3.5">
@@ -172,8 +183,12 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
                 {/* Recipe Body Content */}
                 <div className="p-5 sm:p-6 space-y-4">
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                      {rec.recipe_name}
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors flex items-center justify-between">
+                      <span>{rec.recipe_name}</span>
+                      <span className="text-xs font-semibold text-emerald-600 group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5">
+                        <span>How to make</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
                     </h3>
 
                     {/* Macro Tags */}
@@ -206,11 +221,10 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
 
                   {/* Ingredients Breakdown */}
                   <div className="space-y-3 pt-3 border-t border-slate-100">
-                    {/* Pantry Ingredients Used */}
                     <div>
                       <div className="text-xs font-bold text-emerald-800 flex items-center gap-1.5 mb-1.5">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>Sourced From Your Pantry (0 Grocery Purchase Needed):</span>
+                        <span>Sourced From Your Pantry:</span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {rec.ingredients_used_from_pantry && rec.ingredients_used_from_pantry.length > 0 ? (
@@ -225,12 +239,11 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
                       </div>
                     </div>
 
-                    {/* Optional Chef Suggestions / Add-ons */}
                     {rec.optional_suggestions && rec.optional_suggestions.length > 0 && (
                       <div>
                         <div className="text-xs font-semibold text-slate-500 flex items-center gap-1.5 mb-1.5">
                           <PlusCircle className="w-3.5 h-3.5 text-slate-400" />
-                          <span>Optional Chef Garnishes (Optional):</span>
+                          <span>Optional Chef Garnishes:</span>
                         </div>
                         <div className="flex flex-wrap gap-1.5">
                           {rec.optional_suggestions.map((sug, i) => (
@@ -249,13 +262,175 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
               <div className="px-5 sm:px-6 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
                 <span>Ingredient Value: <strong className="text-slate-900 font-mono font-bold">₹{mealCost.toFixed(0)}</strong></span>
                 <span className="text-emerald-700 font-bold flex items-center gap-1">
-                  ✓ Zero Grocery Cost
+                  ✓ Click to View Recipe Steps
                 </span>
               </div>
             </div>
           );
         })}
       </div>
+
+      {/* Interactive Cooking Recipe Modal */}
+      {selectedRecipe && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 animate-in fade-in zoom-in duration-200 flex flex-col">
+            {/* Modal Image Header */}
+            <div className="relative h-64 w-full bg-slate-100 shrink-0">
+              <img
+                src={selectedRecipe.image_url || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80'}
+                alt={selectedRecipe.recipe_name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedRecipe(null)}
+                className="absolute top-4 right-4 p-2 bg-black/60 hover:bg-black/80 text-white rounded-full transition cursor-pointer backdrop-blur-md"
+                title="Close Recipe"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Title & Badge */}
+              <div className="absolute bottom-4 left-5 right-5 text-white">
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/90 text-white border border-white/20 mb-2 inline-block">
+                  {selectedRecipe.slot} Recipe
+                </span>
+                <h2 className="text-2xl font-black text-white leading-tight">
+                  {selectedRecipe.recipe_name}
+                </h2>
+                <div className="flex items-center gap-4 text-xs text-emerald-200 mt-1 font-medium">
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Prep: {selectedRecipe.prep_time_min} mins • Cook: {selectedRecipe.cook_time_min || 15} mins</span>
+                  </span>
+                  <span>•</span>
+                  <span>100% Sourced From Pantry</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Body Content */}
+            <div className="p-6 sm:p-8 space-y-6 flex-1 overflow-y-auto">
+              {/* Macro Summary Strip */}
+              <div className="grid grid-cols-4 gap-2 text-center p-3 bg-slate-50 rounded-2xl border border-slate-100 font-mono text-xs">
+                <div>
+                  <div className="text-slate-400 font-sans text-[10px]">Calories</div>
+                  <div className="font-bold text-amber-600 text-sm mt-0.5">{selectedRecipe.calories} kcal</div>
+                </div>
+                <div>
+                  <div className="text-slate-400 font-sans text-[10px]">Protein</div>
+                  <div className="font-bold text-emerald-700 text-sm mt-0.5">{selectedRecipe.protein_g}g</div>
+                </div>
+                <div>
+                  <div className="text-slate-400 font-sans text-[10px]">Carbs</div>
+                  <div className="font-bold text-cyan-700 text-sm mt-0.5">{selectedRecipe.carbohydrates_g}g</div>
+                </div>
+                <div>
+                  <div className="text-slate-400 font-sans text-[10px]">Healthy Fat</div>
+                  <div className="font-bold text-pink-700 text-sm mt-0.5">{selectedRecipe.fat_g}g</div>
+                </div>
+              </div>
+
+              {/* Ingredients Checklist */}
+              <div>
+                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2 mb-3">
+                  <Utensils className="w-4 h-4 text-emerald-600" />
+                  <span>Required Ingredients (Ready in Pantry)</span>
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {selectedRecipe.ingredients_used_from_pantry && selectedRecipe.ingredients_used_from_pantry.map((ing, i) => (
+                    <div
+                      key={i}
+                      className="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200/70 text-xs font-medium text-emerald-950 flex items-center gap-2"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span>{ing}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {selectedRecipe.optional_suggestions && selectedRecipe.optional_suggestions.length > 0 && (
+                  <div className="mt-3">
+                    <span className="text-[11px] font-semibold text-slate-500 block mb-1">Optional Chef Add-ons:</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {selectedRecipe.optional_suggestions.map((sug, i) => (
+                        <span key={i} className="px-2.5 py-1 text-[11px] bg-slate-100 text-slate-600 rounded-lg italic">
+                          {sug}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Step-by-Step Cooking Instructions */}
+              <div>
+                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2 mb-3">
+                  <BookOpen className="w-4 h-4 text-indigo-600" />
+                  <span>Step-by-Step Cooking Instructions</span>
+                </h3>
+
+                <div className="space-y-3">
+                  {selectedRecipe.instructions && selectedRecipe.instructions.map((step, idx) => {
+                    const isDone = !!completedSteps[idx];
+                    return (
+                      <div
+                        key={idx}
+                        onClick={() => toggleStep(idx)}
+                        className={`p-4 rounded-2xl border transition-all duration-200 cursor-pointer flex items-start gap-3.5 ${
+                          isDone
+                            ? 'bg-emerald-50/50 border-emerald-200 opacity-75'
+                            : 'bg-white border-slate-200 hover:border-emerald-300 shadow-xs'
+                        }`}
+                      >
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 font-bold text-xs mt-0.5 ${
+                          isDone ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-700'
+                        }`}>
+                          {isDone ? <Check className="w-3.5 h-3.5" /> : idx + 1}
+                        </div>
+                        <div className="flex-1 text-xs text-slate-700 leading-relaxed">
+                          <p className={isDone ? 'line-through text-slate-500' : 'text-slate-800 font-medium'}>
+                            {step}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Chef Zero-Waste Tip */}
+              {selectedRecipe.chef_tips && (
+                <div className="p-4 bg-amber-50 rounded-2xl border border-amber-200 text-xs text-amber-900 flex items-start gap-3">
+                  <ChefHat className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-bold text-amber-950 mb-0.5">Chef's Zero-Waste & Flavor Tip</div>
+                    <p className="leading-relaxed">{selectedRecipe.chef_tips}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 sm:p-6 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
+              <div className="text-xs text-slate-500 font-medium">
+                Ingredient Value: <strong className="text-slate-800 font-mono">₹{selectedRecipe.estimated_cost_inr || selectedRecipe.estimated_cost_usd}</strong>
+              </div>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => setSelectedRecipe(null)}
+                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-600/20 transition cursor-pointer"
+                >
+                  Ready to Cook!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

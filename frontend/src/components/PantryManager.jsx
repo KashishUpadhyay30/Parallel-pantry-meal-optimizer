@@ -1,6 +1,53 @@
 import React, { useState } from 'react';
 import { Refrigerator, Plus, Trash2, AlertCircle, Sparkles, RefreshCw, Check, LayoutGrid, List, Flame, Zap, ShieldAlert, IndianRupee } from 'lucide-react';
 
+const INGREDIENT_PHOTOS = {
+  'mushrooms': 'https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=400&q=80',
+  'greek yogurt': 'https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=400&q=80',
+  'carrots': 'https://images.unsplash.com/photo-1447175008436-054170c2e979?auto=format&fit=crop&w=400&q=80',
+  'rolled oats': 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80',
+  'peanut butter': 'https://images.unsplash.com/photo-1528751014936-863e6e7a319c?auto=format&fit=crop&w=400&q=80',
+  'brown rice': 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80',
+  'white rice': 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80',
+  'chia seeds': 'https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=400&q=80',
+  'soy sauce': 'https://images.unsplash.com/photo-1563865436874-9aef32095fad?auto=format&fit=crop&w=400&q=80',
+  'chickpeas (canned)': 'https://images.unsplash.com/photo-1585994194090-d54b5e282b6d?auto=format&fit=crop&w=400&q=80',
+  'chickpeas': 'https://images.unsplash.com/photo-1585994194090-d54b5e282b6d?auto=format&fit=crop&w=400&q=80',
+  'ground beef': 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=400&q=80',
+  'strawberries': 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=400&q=80',
+  'whole wheat bread': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80',
+  'butter': 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=400&q=80',
+  'onions': 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=400&q=80',
+  'garlic': 'https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=400&q=80',
+  'spinach': 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&q=80',
+  'chicken breast': 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=400&q=80',
+  'whole milk': 'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=400&q=80',
+  'avocado': 'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=400&q=80',
+  'eggs': 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=400&q=80',
+  'bell peppers': 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=400&q=80',
+  'tomatoes': 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=400&q=80',
+  'broccoli': 'https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=400&q=80',
+  'cheddar cheese': 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=400&q=80',
+  'mozzarella': 'https://images.unsplash.com/photo-1589881133595-a3c085cb731d?auto=format&fit=crop&w=400&q=80',
+  'pasta (spaghetti/penne)': 'https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&w=400&q=80',
+  'olive oil': 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80',
+  'honey': 'https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=400&q=80',
+  'almonds': 'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80'
+};
+
+function getIngredientImage(name, serverUrl) {
+  const norm = (name || '').trim().toLowerCase();
+  if (INGREDIENT_PHOTOS[norm]) {
+    return INGREDIENT_PHOTOS[norm];
+  }
+  for (const [k, url] of Object.entries(INGREDIENT_PHOTOS)) {
+    if (norm.includes(k) || k.includes(norm)) {
+      return url;
+    }
+  }
+  return serverUrl || 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&q=80';
+}
+
 export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, onUpdateItem, onSimulateChange, isLoading }) {
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'table'
   const [showAddModal, setShowAddModal] = useState(false);
@@ -157,6 +204,8 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {filteredItems.map((item) => {
             const status = getExpiryStatus(item.days_to_expiry);
+            const photoUrl = getIngredientImage(item.ingredient_name, item.image_url);
+
             return (
               <div
                 key={item.id}
@@ -166,7 +215,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
                   {/* Photo Thumbnail */}
                   <div className="relative h-32 w-full bg-slate-100 overflow-hidden">
                     <img
-                      src={item.image_url || 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&q=80'}
+                      src={photoUrl}
                       alt={item.ingredient_name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
@@ -237,11 +286,13 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
               <tbody className="divide-y divide-slate-100">
                 {filteredItems.map((item) => {
                   const status = getExpiryStatus(item.days_to_expiry);
+                  const photoUrl = getIngredientImage(item.ingredient_name, item.image_url);
+
                   return (
                     <tr key={item.id} className="hover:bg-slate-50/80 transition">
                       <td className="py-3 px-4 font-bold text-slate-900 flex items-center gap-3">
                         <img
-                          src={item.image_url || 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&q=80'}
+                          src={photoUrl}
                           alt={item.ingredient_name}
                           className="w-9 h-9 rounded-lg object-cover border border-slate-200"
                         />
