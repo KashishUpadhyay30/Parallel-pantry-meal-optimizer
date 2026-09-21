@@ -149,12 +149,25 @@ python -m unittest discover tests
 - [x] **Phase 2: Sequential Genetic Algorithm (C++)**
 - [x] **Phase 3: OpenMP Parallel Shared-Memory Island Model (C++)**
 - [x] **Phase 4: Advanced Island Topologies & Elite Ring Migration**
-- [ ] **Phase 5: Distributed Memory MPI Architecture & Scalability Engine**
-- [ ] **Phase 6: HPC Benchmarking Suite (Speedup, Efficiency, Karp-Flatt Metric)**
+- [x] **Phase 5: Distributed Memory MPI Architecture & Scalability Engine**
+- [x] **Phase 6: HPC Benchmarking Suite (Speedup, Efficiency, Karp-Flatt Metric)**
 - [ ] **Phase 7: Publication-Quality Result Visualizations & Plots**
 - [ ] **Phase 8: Python FastAPI Backend & Dynamic Real-Time Re-Optimizer**
 - [ ] **Phase 9: Interactive React + Vite + Tailwind Dashboard**
 - [ ] **Phase 10: Research Paper Manuscript & IEEE/ACM LaTeX Draft**
+
+---
+
+## 📈 Empirical HPC Benchmark Results
+
+Measured on 4-Core OpenMP Shared-Memory architecture across 4 scaling scenarios (5 statistical repetitions each):
+
+| Scenario | Dataset / Load | Sequential Time ($T_1$) | Parallel 4-Threads ($T_4$) | Parallel Speedup ($S_4$) | 2-Thread Efficiency | Karp-Flatt ($e$) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **1. Small Tier** | 60 Recipes, Pop=100 | 69.57 ms | 52.56 ms | **1.32x** | 53.0% | 0.6740 |
+| **2. Medium Tier** | 500 Recipes, Pop=200 | 235.85 ms | 121.92 ms | **1.93x** | 65.6% | 0.3559 |
+| **3. Large Tier** | 2500 Recipes, Pop=400 | 570.73 ms | 292.55 ms | **1.95x** | 81.9% | 0.3501 |
+| **4. Stress Load** | 2500 Recipes, Pop=800 | 1668.14 ms | 685.17 ms | **2.43x** | **94.6%** | **0.0570** |
 
 ---
 
@@ -166,4 +179,5 @@ Developed as an HPC academic research project investigating parallel evolutionar
 | :--- | :--- | :--- |
 | **Kashish Upadhyay** | [@KashishUpadhyay30](https://github.com/KashishUpadhyay30) | Lead Author & Project Architect |
 | **Animesh Labh** | [@animeshlabh57-rgb](https://github.com/animeshlabh57-rgb) | Research & HPC Co-Author |
+
 

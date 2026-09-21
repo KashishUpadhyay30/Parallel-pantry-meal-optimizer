@@ -1,0 +1,21 @@
+Scenario,Dataset,Population,Generations,Threads,Execution_Time_ms,Std_Dev_ms,Speedup,Parallel_Efficiency_Pct,Karp_Flatt_Metric,Best_Fitness,Nutrition_Satisfaction,Expiry_Score,Additional_Cost_USD
+Scenario 1: Small Dataset,Small (60 recipes),100,100,1,69.57,5.0,1.0,100.0,0.0,0.1653,0.8072,0.2278,1.85
+Scenario 1: Small Dataset,Small (60 recipes),100,100,1,75.13,2.97,0.93,92.6,0.0,0.1653,0.8072,0.2278,1.85
+Scenario 1: Small Dataset,Small (60 recipes),100,100,2,65.6,2.9,1.06,53.0,0.8857,0.1653,0.8072,0.2278,1.85
+Scenario 1: Small Dataset,Small (60 recipes),100,100,4,52.56,1.71,1.32,33.1,0.674,0.1653,0.8072,0.2278,1.85
+Scenario 1: Small Dataset,Small (60 recipes),100,100,8,55.68,2.77,1.25,15.6,0.7718,0.1653,0.8072,0.2278,1.85
+Scenario 2: Medium Dataset,Medium (500 recipes),200,150,1,235.85,10.49,1.0,100.0,0.0,0.201,0.7888,0.2601,1.57
+Scenario 2: Medium Dataset,Medium (500 recipes),200,150,1,236.85,14.03,1.0,99.6,0.0,0.2079,0.7851,0.2922,2.65
+Scenario 2: Medium Dataset,Medium (500 recipes),200,150,2,179.68,3.21,1.31,65.6,0.5236,0.2062,0.7861,0.2842,2.38
+Scenario 2: Medium Dataset,Medium (500 recipes),200,150,4,121.92,16.64,1.93,48.4,0.3559,0.2079,0.7851,0.2922,2.65
+Scenario 2: Medium Dataset,Medium (500 recipes),200,150,8,191.23,42.24,1.23,15.4,0.7838,0.2062,0.7861,0.2842,2.38
+Scenario 3: Large Dataset,Large (2500 recipes),400,200,1,570.73,17.15,1.0,100.0,0.0,0.2752,0.8213,0.3287,1.05
+Scenario 3: Large Dataset,Large (2500 recipes),400,200,1,544.58,110.91,1.05,104.8,0.0,0.2752,0.8213,0.3287,1.05
+Scenario 3: Large Dataset,Large (2500 recipes),400,200,2,348.36,13.48,1.64,81.9,0.2207,0.2752,0.8213,0.3287,1.05
+Scenario 3: Large Dataset,Large (2500 recipes),400,200,4,292.55,42.59,1.95,48.8,0.3501,0.2752,0.8213,0.3287,1.05
+Scenario 3: Large Dataset,Large (2500 recipes),400,200,8,330.19,20.21,1.73,21.6,0.5183,0.2752,0.8213,0.3287,1.05
+Scenario 4: High Optimization Load,Large (2500 recipes - Stress),800,300,1,1668.14,151.93,1.0,100.0,0.0,0.2752,0.8213,0.3287,1.05
+Scenario 4: High Optimization Load,Large (2500 recipes - Stress),800,300,1,1702.82,125.2,0.98,98.0,0.0,0.2752,0.8213,0.3287,1.05
+Scenario 4: High Optimization Load,Large (2500 recipes - Stress),800,300,2,881.59,72.89,1.89,94.6,0.057,0.2752,0.8213,0.3287,1.05
+Scenario 4: High Optimization Load,Large (2500 recipes - Stress),800,300,4,685.17,14.06,2.43,60.9,0.2143,0.2752,0.8213,0.3287,1.05
+Scenario 4: High Optimization Load,Large (2500 recipes - Stress),800,300,8,812.92,49.39,2.05,25.7,0.4141,0.2752,0.8213,0.3287,1.05

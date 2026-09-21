@@ -1,0 +1,274 @@
+[
+  {
+    "scenario": "Scenario 1: Small Dataset",
+    "dataset": "Small (60 recipes)",
+    "pop_size": 100,
+    "generations": 100,
+    "sequential": {
+      "mean_time_ms": 69.57386,
+      "std_time_ms": 4.995391385106878,
+      "mean_best_fitness": 0.16526,
+      "mean_nutr": 0.8071780000000001,
+      "mean_expiry": 0.227801,
+      "mean_cost": 1.85
+    },
+    "parallel_runs": [
+      {
+        "num_threads": 1,
+        "mean_time_ms": 75.13054,
+        "std_time_ms": 2.9688714883605196,
+        "speedup": 0.9260396637638968,
+        "efficiency_percent": 92.60396637638968,
+        "karp_flatt_serial_fraction": 0.0,
+        "mean_best_fitness": 0.16526,
+        "mean_nutr": 0.8071780000000001,
+        "mean_expiry": 0.227801,
+        "mean_cost": 1.85,
+        "mean_migrations": 0.0
+      },
+      {
+        "num_threads": 2,
+        "mean_time_ms": 65.59608,
+        "std_time_ms": 2.903886955375501,
+        "speedup": 1.0606405138843662,
+        "efficiency_percent": 53.03202569421831,
+        "karp_flatt_serial_fraction": 0.8856530311815387,
+        "mean_best_fitness": 0.16526,
+        "mean_nutr": 0.8071780000000001,
+        "mean_expiry": 0.227801,
+        "mean_cost": 1.85,
+        "mean_migrations": 24.0
+      },
+      {
+        "num_threads": 4,
+        "mean_time_ms": 52.56262,
+        "std_time_ms": 1.7059389419319781,
+        "speedup": 1.3236375964516227,
+        "efficiency_percent": 33.09093991129057,
+        "karp_flatt_serial_fraction": 0.6739917357850588,
+        "mean_best_fitness": 0.16526,
+        "mean_nutr": 0.8071780000000001,
+        "mean_expiry": 0.227801,
+        "mean_cost": 1.85,
+        "mean_migrations": 48.0
+      },
+      {
+        "num_threads": 8,
+        "mean_time_ms": 55.68002,
+        "std_time_ms": 2.7723376903977615,
+        "speedup": 1.2495300827837346,
+        "efficiency_percent": 15.619126034796682,
+        "karp_flatt_serial_fraction": 0.771772411567875,
+        "mean_best_fitness": 0.16526,
+        "mean_nutr": 0.8071780000000001,
+        "mean_expiry": 0.227801,
+        "mean_cost": 1.85,
+        "mean_migrations": 96.0
+      }
+    ]
+  },
+  {
+    "scenario": "Scenario 2: Medium Dataset",
+    "dataset": "Medium (500 recipes)",
+    "pop_size": 200,
+    "generations": 150,
+    "sequential": {
+      "mean_time_ms": 235.85219999999998,
+      "std_time_ms": 10.490225648669341,
+      "mean_best_fitness": 0.20104479999999997,
+      "mean_nutr": 0.7888490000000001,
+      "mean_expiry": 0.2601166,
+      "mean_cost": 1.5699999999999998
+    },
+    "parallel_runs": [
+      {
+        "num_threads": 1,
+        "mean_time_ms": 236.8538,
+        "std_time_ms": 14.034681462719417,
+        "speedup": 0.9957712310294367,
+        "efficiency_percent": 99.57712310294366,
+        "karp_flatt_serial_fraction": 0.0,
+        "mean_best_fitness": 0.207912,
+        "mean_nutr": 0.785129,
+        "mean_expiry": 0.292235,
+        "mean_cost": 2.65,
+        "mean_migrations": 0.0
+      },
+      {
+        "num_threads": 2,
+        "mean_time_ms": 179.6764,
+        "std_time_ms": 3.2118549531384466,
+        "speedup": 1.3126498527352506,
+        "efficiency_percent": 65.63249263676254,
+        "karp_flatt_serial_fraction": 0.52363556498519,
+        "mean_best_fitness": 0.20619520000000002,
+        "mean_nutr": 0.7860590000000001,
+        "mean_expiry": 0.2842054,
+        "mean_cost": 2.38,
+        "mean_migrations": 40.0
+      },
+      {
+        "num_threads": 4,
+        "mean_time_ms": 121.918,
+        "std_time_ms": 16.640328314068807,
+        "speedup": 1.9345150018865136,
+        "efficiency_percent": 48.36287504716284,
+        "karp_flatt_serial_fraction": 0.3559005738904846,
+        "mean_best_fitness": 0.207912,
+        "mean_nutr": 0.785129,
+        "mean_expiry": 0.292235,
+        "mean_cost": 2.65,
+        "mean_migrations": 80.0
+      },
+      {
+        "num_threads": 8,
+        "mean_time_ms": 191.2322,
+        "std_time_ms": 42.24338763593658,
+        "speedup": 1.2333289059060135,
+        "efficiency_percent": 15.416611323825169,
+        "karp_flatt_serial_fraction": 0.7837871102568232,
+        "mean_best_fitness": 0.20619520000000002,
+        "mean_nutr": 0.7860590000000001,
+        "mean_expiry": 0.2842054,
+        "mean_cost": 2.38,
+        "mean_migrations": 160.0
+      }
+    ]
+  },
+  {
+    "scenario": "Scenario 3: Large Dataset",
+    "dataset": "Large (2500 recipes)",
+    "pop_size": 400,
+    "generations": 200,
+    "sequential": {
+      "mean_time_ms": 570.7306000000001,
+      "std_time_ms": 17.15064127780647,
+      "mean_best_fitness": 0.275167,
+      "mean_nutr": 0.8212720000000001,
+      "mean_expiry": 0.328656,
+      "mean_cost": 1.05
+    },
+    "parallel_runs": [
+      {
+        "num_threads": 1,
+        "mean_time_ms": 544.5840000000001,
+        "std_time_ms": 110.90992216929915,
+        "speedup": 1.0480120605820222,
+        "efficiency_percent": 104.80120605820223,
+        "karp_flatt_serial_fraction": 0.0,
+        "mean_best_fitness": 0.275167,
+        "mean_nutr": 0.8212720000000001,
+        "mean_expiry": 0.328656,
+        "mean_cost": 1.05,
+        "mean_migrations": 0.0
+      },
+      {
+        "num_threads": 2,
+        "mean_time_ms": 348.3578,
+        "std_time_ms": 13.475190824622846,
+        "speedup": 1.6383459764644286,
+        "efficiency_percent": 81.91729882322143,
+        "karp_flatt_serial_fraction": 0.22074337699783375,
+        "mean_best_fitness": 0.275167,
+        "mean_nutr": 0.8212720000000001,
+        "mean_expiry": 0.328656,
+        "mean_cost": 1.05,
+        "mean_migrations": 52.0
+      },
+      {
+        "num_threads": 4,
+        "mean_time_ms": 292.5518,
+        "std_time_ms": 42.58636319950319,
+        "speedup": 1.9508702390482644,
+        "efficiency_percent": 48.77175597620661,
+        "karp_flatt_serial_fraction": 0.35012234026585104,
+        "mean_best_fitness": 0.275167,
+        "mean_nutr": 0.8212720000000001,
+        "mean_expiry": 0.328656,
+        "mean_cost": 1.05,
+        "mean_migrations": 104.0
+      },
+      {
+        "num_threads": 8,
+        "mean_time_ms": 330.1944,
+        "std_time_ms": 20.212061563333897,
+        "speedup": 1.7284684416210576,
+        "efficiency_percent": 21.60585552026322,
+        "karp_flatt_serial_fraction": 0.5183392755080691,
+        "mean_best_fitness": 0.275167,
+        "mean_nutr": 0.8212720000000001,
+        "mean_expiry": 0.328656,
+        "mean_cost": 1.05,
+        "mean_migrations": 208.0
+      }
+    ]
+  },
+  {
+    "scenario": "Scenario 4: High Optimization Load",
+    "dataset": "Large (2500 recipes - Stress)",
+    "pop_size": 800,
+    "generations": 300,
+    "sequential": {
+      "mean_time_ms": 1668.136,
+      "std_time_ms": 151.9275638717346,
+      "mean_best_fitness": 0.275167,
+      "mean_nutr": 0.8212720000000001,
+      "mean_expiry": 0.328656,
+      "mean_cost": 1.05
+    },
+    "parallel_runs": [
+      {
+        "num_threads": 1,
+        "mean_time_ms": 1702.8200000000002,
+        "std_time_ms": 125.20291178722637,
+        "speedup": 0.9796314349138486,
+        "efficiency_percent": 97.96314349138487,
+        "karp_flatt_serial_fraction": 0.0,
+        "mean_best_fitness": 0.275167,
+        "mean_nutr": 0.8212720000000001,
+        "mean_expiry": 0.328656,
+        "mean_cost": 1.05,
+        "mean_migrations": 0.0
+      },
+      {
+        "num_threads": 2,
+        "mean_time_ms": 881.5926,
+        "std_time_ms": 72.89219170418737,
+        "speedup": 1.8921846667043258,
+        "efficiency_percent": 94.60923333521629,
+        "karp_flatt_serial_fraction": 0.05697928706052746,
+        "mean_best_fitness": 0.275167,
+        "mean_nutr": 0.8212720000000001,
+        "mean_expiry": 0.328656,
+        "mean_cost": 1.05,
+        "mean_migrations": 80.0
+      },
+      {
+        "num_threads": 4,
+        "mean_time_ms": 685.1736000000001,
+        "std_time_ms": 14.06218414898626,
+        "speedup": 2.434618029649712,
+        "efficiency_percent": 60.865450741242796,
+        "karp_flatt_serial_fraction": 0.214322733078518,
+        "mean_best_fitness": 0.275167,
+        "mean_nutr": 0.8212720000000001,
+        "mean_expiry": 0.328656,
+        "mean_cost": 1.05,
+        "mean_migrations": 160.0
+      },
+      {
+        "num_threads": 8,
+        "mean_time_ms": 812.9172000000001,
+        "std_time_ms": 49.38711907937131,
+        "speedup": 2.052036788002517,
+        "efficiency_percent": 25.650459850031464,
+        "karp_flatt_serial_fraction": 0.41408079779723345,
+        "mean_best_fitness": 0.275167,
+        "mean_nutr": 0.8212720000000001,
+        "mean_expiry": 0.328656,
+        "mean_cost": 1.05,
+        "mean_migrations": 320.0
+      }
+    ]
+  }
+]
