@@ -1,4 +1,4 @@
-﻿"""
+"""
 C++ Optimization Engine Bridge
 Coordinates between FastAPI backend, SQLite pantry database,
 and high-speed C++ compiled binaries (sequential_ga.exe / parallel_ga.exe).
@@ -16,6 +16,89 @@ BIN_SEQ = os.path.join(BASE_DIR, "bin", "sequential_ga.exe")
 BIN_PAR = os.path.join(BASE_DIR, "bin", "parallel_ga.exe")
 PROCESSED_DIR = os.path.join(BASE_DIR, "data", "processed")
 VOCAB_PATH = os.path.join(PROCESSED_DIR, "ingredient_vocabulary.json")
+
+def get_recipe_image_url(recipe_name, slot=""):
+    name = (recipe_name or "").lower()
+    slot_l = (slot or "").lower()
+    
+    if any(k in name for k in ["oat", "porridge", "granola"]):
+        return "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["pancake", "waffle", "crepe"]):
+        return "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["toast", "egg", "omelet", "scramble", "frittata"]):
+        return "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["smoothie", "parfait", "yogurt", "pudding", "acai"]):
+        return "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["salmon", "fish", "tuna", "shrimp", "seafood", "cod"]):
+        return "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["chicken", "turkey", "poultry"]):
+        return "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["pasta", "spaghetti", "lasagna", "penne", "macaroni", "noodle", "fettuccine"]):
+        return "https://images.unsplash.com/photo-1621996346565-e3d5d6281691?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["salad", "quinoa", "kale", "greens", "spinach"]):
+        return "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["burrito", "taco", "fajita", "wrap", "quesadilla"]):
+        return "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["stir fry", "rice", "tofu", "curry", "teriyaki"]):
+        return "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["steak", "beef", "roast", "meatball", "burger"]):
+        return "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["soup", "stew", "chili", "broth", "chowder"]):
+        return "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["snack", "bite", "almond", "nut", "bar", "hummus"]):
+        return "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80"
+    if any(k in name for k in ["berry", "fruit", "apple", "banana"]):
+        return "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=600&q=80"
+    
+    if slot_l == "breakfast":
+        return "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80"
+    elif slot_l == "snack":
+        return "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=600&q=80"
+    elif slot_l == "dinner":
+        return "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
+    return "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
+
+def get_ingredient_image_url(ing_name):
+    name = (ing_name or "").lower()
+    if "spinach" in name:
+        return "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&q=80"
+    if "chicken" in name:
+        return "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=400&q=80"
+    if "egg" in name:
+        return "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=400&q=80"
+    if "milk" in name:
+        return "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=400&q=80"
+    if "tomato" in name:
+        return "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=400&q=80"
+    if "yogurt" in name:
+        return "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=400&q=80"
+    if "rice" in name:
+        return "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80"
+    if "olive oil" in name or "oil" in name:
+        return "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80"
+    if "broccoli" in name:
+        return "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=400&q=80"
+    if "avocado" in name:
+        return "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=400&q=80"
+    if "oat" in name:
+        return "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=400&q=80"
+    if "salmon" in name or "fish" in name:
+        return "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=400&q=80"
+    if "cheese" in name:
+        return "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=400&q=80"
+    if "garlic" in name or "onion" in name:
+        return "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=400&q=80"
+    if "pepper" in name:
+        return "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=400&q=80"
+    if "berry" in name or "blueberry" in name or "strawberry" in name:
+        return "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=400&q=80"
+    if "honey" in name:
+        return "https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=400&q=80"
+    if "almond" in name or "nut" in name or "peanut" in name:
+        return "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=400&q=80"
+    if "banana" in name or "apple" in name:
+        return "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&q=80"
+    return "https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&q=80"
 
 def load_vocabulary():
     with open(VOCAB_PATH, "r", encoding="utf-8") as f:
@@ -43,6 +126,7 @@ def export_db_pantry_to_dat(temp_dat_path, vocab):
             ing_id = vocab.get(name_norm, {}).get("id", 0)
             f.write(f"{row['id']} {ing_id} {row['quantity']:.2f} {row['days_to_expiry']} {row['estimated_unit_cost']:.4f} {row['perishability_hazard']:.2f}\n")
     return {r["ingredient_name"].strip().lower(): r["quantity"] for r in rows}
+
 
 def run_optimization(req):
     vocab = load_vocabulary()
@@ -142,8 +226,10 @@ def run_optimization(req):
                 "estimated_cost_usd": r_meta["estimated_cost_usd"],
                 "dietary_tags": r_meta.get("dietary_tags", []),
                 "ingredients_used_from_pantry": used_from_pantry,
-                "missing_ingredients_to_buy": missing_to_buy
+                "missing_ingredients_to_buy": missing_to_buy,
+                "image_url": get_recipe_image_url(r_meta["recipe_name"], slot_name)
             })
+
 
         # 6. Save in SQLite History
         scores = run_data["best_scores"]

@@ -16,7 +16,7 @@ from .models import (
     PantryItemCreate, PantryItemUpdate, PantryItemResponse,
     OptimizeRequest, OptimizationResponse, SimulatePantryChangeRequest
 )
-from .optimizer_bridge import run_optimization
+from .optimizer_bridge import run_optimization, get_ingredient_image_url
 
 # Initialize database
 init_db()
@@ -57,7 +57,13 @@ def get_pantry():
     cursor.execute("SELECT * FROM pantry_items ORDER BY days_to_expiry ASC")
     rows = cursor.fetchall()
     conn.close()
-    return [dict(r) for r in rows]
+    items = []
+    for r in rows:
+        d = dict(r)
+        d["image_url"] = get_ingredient_image_url(d["ingredient_name"])
+        items.append(d)
+    return items
+
 
 @app.post("/pantry", response_model=PantryItemResponse, status_code=status.HTTP_201_CREATED)
 def add_pantry_item(item: PantryItemCreate):
@@ -79,7 +85,12 @@ def add_pantry_item(item: PantryItemCreate):
     conn.commit()
     conn.close()
 
-    return {**item.model_dump(), "id": new_id, "expiry_date": expiry_date}
+    return {
+        **item.model_dump(),
+        "id": new_id,
+        "expiry_date": expiry_date,
+        "image_url": get_ingredient_image_url(item.ingredient_name)
+    }
 
 
 @app.put("/pantry/{item_id}", response_model=PantryItemResponse)
@@ -105,8 +116,10 @@ def update_pantry_item(item_id: int, update: PantryItemUpdate):
     conn.commit()
     cursor.execute("SELECT * FROM pantry_items WHERE id = ?", (item_id,))
     updated_row = dict(cursor.fetchone())
+    updated_row["image_url"] = get_ingredient_image_url(updated_row["ingredient_name"])
     conn.close()
     return updated_row
+
 
 @app.delete("/pantry/{item_id}")
 def delete_pantry_item(item_id: int):

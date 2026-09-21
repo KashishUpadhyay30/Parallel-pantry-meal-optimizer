@@ -143,15 +143,16 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
       {/* Toast Notification */}
       {notification && (
-        <div className="fixed bottom-5 right-5 z-50 animate-bounce">
-          <div className={`px-4 py-3 rounded-xl shadow-2xl border text-sm font-medium flex items-center gap-2 ${
+        <div className="fixed bottom-6 right-6 z-50 animate-bounce">
+          <div className={`px-4 py-3 rounded-2xl shadow-xl border text-sm font-semibold flex items-center gap-2.5 ${
             notification.type === 'error'
-              ? 'bg-red-950 border-red-500/50 text-red-200'
-              : 'bg-emerald-950 border-emerald-500/50 text-emerald-200'
+              ? 'bg-red-50 border-red-200 text-red-800'
+              : 'bg-white border-emerald-200 text-emerald-800 shadow-emerald-500/10'
           }`}>
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
             <span>{notification.msg}</span>
           </div>
         </div>
@@ -163,15 +164,17 @@ export default function App() {
         setActiveTab={setActiveTab}
         onQuickOptimize={handleRunOptimizer}
         isOptimizing={isOptimizing}
+        pantryCount={pantryItems.length}
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeTab === 'meals' && (
           <MealPlanView
             optimizationResult={optimizationResult}
             isOptimizing={isOptimizing}
             onReoptimize={handleRunOptimizer}
+            onNavigatePantry={() => setActiveTab('pantry')}
           />
         )}
 
@@ -203,14 +206,15 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-900/40 py-4 text-center text-xs text-slate-500">
-        <p>
-          High-Performance Parallel Multi-Objective Optimization for Real-Time Pantry-Aware Meal Planning • OpenMP & Genetic Algorithms
+      <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500 space-y-1">
+        <p className="font-medium text-slate-700">
+          PantryWise • High-Performance Parallel Multi-Objective Optimization for Real-Time Meal Planning
         </p>
-        <p className="mt-1">
-          Authors: Kashish Upadhyay & Animesh Labh • Academic Research Project
+        <p>
+          OpenMP Shared-Memory Coarse-Grained Island Model • Authors: Kashish Upadhyay & Animesh Labh
         </p>
       </footer>
     </div>
   );
 }
+

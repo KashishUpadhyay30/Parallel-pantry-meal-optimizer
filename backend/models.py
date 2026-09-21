@@ -1,4 +1,4 @@
-﻿"""
+"""
 Pydantic API Schemas for Requests and Responses
 """
 
@@ -14,12 +14,14 @@ class PantryItemCreate(BaseModel):
     estimated_unit_cost: float = 0.01
     category: str = "General"
     perishability_hazard: float = 3.0
+    image_url: Optional[str] = None
 
 class PantryItemUpdate(BaseModel):
     quantity: Optional[float] = None
     days_to_expiry: Optional[int] = None
     expiry_date: Optional[str] = None
     estimated_unit_cost: Optional[float] = None
+    image_url: Optional[str] = None
 
 class PantryItemResponse(PantryItemCreate):
     id: int
@@ -50,6 +52,8 @@ class RecipeRecommendation(BaseModel):
     dietary_tags: List[str]
     ingredients_used_from_pantry: List[str]
     missing_ingredients_to_buy: List[str]
+    image_url: Optional[str] = None
+
 
 class OptimizationResponse(BaseModel):
     algorithm: str
