@@ -1,4 +1,4 @@
-﻿#ifndef TYPES_HPP
+#ifndef TYPES_HPP
 #define TYPES_HPP
 
 #include <vector>

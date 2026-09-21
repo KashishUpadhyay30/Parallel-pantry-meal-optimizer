@@ -1,4 +1,4 @@
-﻿#ifndef FITNESS_EVALUATOR_HPP
+#ifndef FITNESS_EVALUATOR_HPP
 #define FITNESS_EVALUATOR_HPP
 
 #include "../models/types.hpp"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Refrigerator, Plus, Trash2, AlertCircle, Sparkles, RefreshCw, Check, LayoutGrid, List, Flame, Zap, ShieldAlert } from 'lucide-react';
+import { Refrigerator, Plus, Trash2, AlertCircle, Sparkles, RefreshCw, Check, LayoutGrid, List, Flame, Zap, ShieldAlert, IndianRupee } from 'lucide-react';
 
 export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, onUpdateItem, onSimulateChange, isLoading }) {
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'table'
@@ -8,12 +8,12 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
 
   const [newItem, setNewItem] = useState({
     ingredient_name: '',
-    quantity: 200,
+    quantity: 250,
     unit: 'g',
-    days_to_expiry: 3,
-    estimated_unit_cost: 0.01,
+    days_to_expiry: 4,
+    estimated_unit_cost: 0.20,
     category: 'Produce',
-    perishability_hazard: 4.0
+    perishability_hazard: 3.5
   });
 
   const categories = ['All', 'Produce', 'Protein', 'Dairy', 'Grains', 'Pantry'];
@@ -22,18 +22,20 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
     ? pantryItems
     : pantryItems.filter(item => item.category?.toLowerCase() === selectedCategory.toLowerCase());
 
+  const totalEstimatedValue = pantryItems.reduce((acc, it) => acc + (it.quantity * (it.estimated_unit_cost || 0)), 0);
+
   const handleAddSubmit = (e) => {
     e.preventDefault();
     if (!newItem.ingredient_name.trim()) return;
     onAddItem(newItem);
     setNewItem({
       ingredient_name: '',
-      quantity: 200,
+      quantity: 250,
       unit: 'g',
-      days_to_expiry: 3,
-      estimated_unit_cost: 0.01,
+      days_to_expiry: 4,
+      estimated_unit_cost: 0.20,
       category: 'Produce',
-      perishability_hazard: 4.0
+      perishability_hazard: 3.5
     });
     setShowAddModal(false);
   };
@@ -41,7 +43,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
   const getExpiryStatus = (days) => {
     if (days <= 2) {
       return {
-        label: days === 0 ? 'Expires Today' : `${days}d (Critical)`,
+        label: days === 0 ? 'Expires Today' : `${days}d (Urgent)`,
         badgeClass: 'bg-red-50 text-red-700 border-red-200',
         barColor: 'bg-red-500',
         percentage: 15
@@ -65,7 +67,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
   return (
     <div className="space-y-6">
       {/* Top Header & Simulation Actions */}
-      <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center space-x-2">
             <span className="p-2 bg-emerald-50 text-emerald-600 rounded-xl">
@@ -74,7 +76,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
             <h2 className="text-xl font-bold text-slate-900">Pantry & Refrigerator Inventory</h2>
           </div>
           <p className="text-xs text-slate-500 mt-1">
-            Real-time tracked perishable ingredients. Changes automatically trigger sub-second parallel re-optimization.
+            Tracking {pantryItems.length} pantry items (Total Stock Value: <strong className="text-slate-800 font-mono">₹{totalEstimatedValue.toFixed(0)}</strong>). Adding or consuming ingredients automatically re-optimizes recipes.
           </p>
         </div>
 
@@ -83,6 +85,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
           <button
             onClick={() => onSimulateChange('spoil_warning', 'Spinach')}
             className="px-3 py-1.5 text-xs font-semibold bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 rounded-xl transition cursor-pointer flex items-center gap-1"
+            title="Simulate Spinach nearing expiration"
           >
             <ShieldAlert className="w-3.5 h-3.5 text-red-600" />
             <span>⚡ Spoil Alert (Spinach)</span>
@@ -90,6 +93,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
           <button
             onClick={() => onSimulateChange('consume', 'Chicken Breast')}
             className="px-3 py-1.5 text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl transition cursor-pointer flex items-center gap-1"
+            title="Simulate cooking with Chicken Breast"
           >
             <Zap className="w-3.5 h-3.5 text-amber-600" />
             <span>⚡ Consume Chicken</span>
@@ -97,6 +101,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
           <button
             onClick={() => onSimulateChange('reset')}
             className="px-3 py-1.5 text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 rounded-xl transition cursor-pointer flex items-center gap-1"
+            title="Reset to default 30 inventory items"
           >
             <RefreshCw className="w-3.5 h-3.5 text-slate-600" />
             <span>🔄 Reset Stock</span>
@@ -112,7 +117,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
       </div>
 
       {/* Filter Category Tabs & View Switcher */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-slate-200 shadow-xs">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
         <div className="flex flex-wrap gap-1.5">
           {categories.map((cat) => (
             <button
@@ -155,11 +160,11 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden food-card-shadow transition-all duration-200 flex flex-col justify-between group"
+                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
               >
                 <div>
                   {/* Photo Thumbnail */}
-                  <div className="relative h-28 w-full bg-slate-100 overflow-hidden">
+                  <div className="relative h-32 w-full bg-slate-100 overflow-hidden">
                     <img
                       src={item.image_url || 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&q=80'}
                       alt={item.ingredient_name}
@@ -181,7 +186,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
                       </h4>
                       <div className="flex items-center justify-between text-xs text-slate-500 mt-0.5">
                         <span className="font-medium">{item.category}</span>
-                        <span className="font-mono font-semibold text-slate-800">
+                        <span className="font-mono font-bold text-emerald-700">
                           {item.quantity} {item.unit}
                         </span>
                       </div>
@@ -199,8 +204,8 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
 
                 {/* Card Footer Actions */}
                 <div className="p-2.5 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-slate-500">
-                    ${item.estimated_unit_cost.toFixed(2)}/{item.unit}
+                  <span className="text-[11px] font-mono font-semibold text-slate-600">
+                    ₹{item.estimated_unit_cost >= 1 ? item.estimated_unit_cost.toFixed(0) : item.estimated_unit_cost.toFixed(2)}/{item.unit}
                   </span>
                   <button
                     onClick={() => onDeleteItem(item.id)}
@@ -216,7 +221,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
         </div>
       ) : (
         /* Table View */
-        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs sm:text-sm">
               <thead className="bg-slate-50 text-xs font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200">
@@ -224,8 +229,8 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
                   <th className="py-3 px-4">Ingredient</th>
                   <th className="py-3 px-4">Category</th>
                   <th className="py-3 px-4">Stock</th>
-                  <th className="py-3 px-4">Shelf-Life</th>
-                  <th className="py-3 px-4">Unit Cost</th>
+                  <th className="py-3 px-4">Freshness</th>
+                  <th className="py-3 px-4">Unit Cost (INR)</th>
                   <th className="py-3 px-4 text-right">Actions</th>
                 </tr>
               </thead>
@@ -238,7 +243,7 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
                         <img
                           src={item.image_url || 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&q=80'}
                           alt={item.ingredient_name}
-                          className="w-8 h-8 rounded-lg object-cover border border-slate-200"
+                          className="w-9 h-9 rounded-lg object-cover border border-slate-200"
                         />
                         <span>{item.ingredient_name}</span>
                       </td>
@@ -249,11 +254,14 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
                           {status.label}
                         </span>
                       </td>
-                      <td className="py-3 px-4 font-mono text-slate-600">${item.estimated_unit_cost.toFixed(3)}</td>
+                      <td className="py-3 px-4 font-mono font-medium text-slate-700">
+                        ₹{item.estimated_unit_cost >= 1 ? item.estimated_unit_cost.toFixed(0) : item.estimated_unit_cost.toFixed(2)} / {item.unit}
+                      </td>
                       <td className="py-3 px-4 text-right">
                         <button
                           onClick={() => onDeleteItem(item.id)}
-                          className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition cursor-pointer"
+                          className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition"
+                          title="Delete"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -267,91 +275,115 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
         </div>
       )}
 
-      {/* Add Modal */}
+      {/* Add Item Modal */}
       {showAddModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs p-4">
-          <div className="bg-white border border-slate-200 rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl">
-            <h3 className="text-lg font-bold text-slate-900">Add Pantry Ingredient</h3>
-            <form onSubmit={handleAddSubmit} className="space-y-3">
+        <div className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4 animate-in fade-in zoom-in duration-200">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <Plus className="w-5 h-5 text-emerald-600" />
+                <span>Add Pantry Ingredient</span>
+              </h3>
+              <button
+                onClick={() => setShowAddModal(false)}
+                className="text-slate-400 hover:text-slate-600 text-sm font-bold"
+              >
+                ✕
+              </button>
+            </div>
+
+            <form onSubmit={handleAddSubmit} className="space-y-3.5 text-xs">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Ingredient Name</label>
+                <label className="block font-semibold text-slate-700 mb-1">Ingredient Name</label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Baby Spinach"
+                  placeholder="e.g. Greek Yogurt, Tomatoes, Pasta"
                   value={newItem.ingredient_name}
                   onChange={(e) => setNewItem({ ...newItem, ingredient_name: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-emerald-500 font-medium"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Quantity</label>
+                  <label className="block font-semibold text-slate-700 mb-1">Quantity</label>
                   <input
                     type="number"
+                    min="1"
                     step="any"
-                    required
                     value={newItem.quantity}
-                    onChange={(e) => setNewItem({ ...newItem, quantity: parseFloat(e.target.value) })}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white"
+                    onChange={(e) => setNewItem({ ...newItem, quantity: parseFloat(e.target.value) || 0 })}
+                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-emerald-500 font-mono"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Unit</label>
+                  <label className="block font-semibold text-slate-700 mb-1">Unit</label>
                   <select
                     value={newItem.unit}
                     onChange={(e) => setNewItem({ ...newItem, unit: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white font-medium"
+                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-emerald-500 font-medium"
                   >
-                    <option value="g">Grams (g)</option>
-                    <option value="ml">Milliliters (ml)</option>
-                    <option value="count">Count (units)</option>
+                    <option value="g">grams (g)</option>
+                    <option value="ml">milliliters (ml)</option>
+                    <option value="count">count (pcs)</option>
                   </select>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Days to Expiry</label>
-                  <input
-                    type="number"
-                    min="0"
-                    required
-                    value={newItem.days_to_expiry}
-                    onChange={(e) => setNewItem({ ...newItem, days_to_expiry: parseInt(e.target.value) })}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">Category</label>
+                  <label className="block font-semibold text-slate-700 mb-1">Category</label>
                   <select
                     value={newItem.category}
                     onChange={(e) => setNewItem({ ...newItem, category: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white font-medium"
+                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-emerald-500 font-medium"
                   >
                     <option value="Produce">Produce</option>
-                    <option value="Dairy">Dairy</option>
                     <option value="Protein">Protein</option>
+                    <option value="Dairy">Dairy</option>
                     <option value="Grains">Grains</option>
-                    <option value="Pantry">Pantry / Spice</option>
+                    <option value="Pantry">Pantry</option>
                   </select>
+                </div>
+                <div>
+                  <label className="block font-semibold text-slate-700 mb-1">Days Until Expiry</label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="365"
+                    value={newItem.days_to_expiry}
+                    onChange={(e) => setNewItem({ ...newItem, days_to_expiry: parseInt(e.target.value) || 1 })}
+                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-emerald-500 font-mono"
+                  />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end space-x-2 pt-4 border-t border-slate-100">
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">Estimated Unit Cost (₹)</label>
+                <input
+                  type="number"
+                  min="0.01"
+                  step="any"
+                  value={newItem.estimated_unit_cost}
+                  onChange={(e) => setNewItem({ ...newItem, estimated_unit_cost: parseFloat(e.target.value) || 0.1 })}
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none focus:border-emerald-500 font-mono"
+                />
+              </div>
+
+              <div className="flex gap-2 pt-2">
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition cursor-pointer"
+                  className="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-semibold transition"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow transition cursor-pointer"
+                  className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold shadow-md shadow-emerald-600/20 transition"
                 >
-                  Save to Inventory
+                  Save Ingredient
                 </button>
               </div>
             </form>
@@ -361,4 +393,3 @@ export default function PantryManager({ pantryItems, onAddItem, onDeleteItem, on
     </div>
   );
 }
-

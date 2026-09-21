@@ -1,4 +1,4 @@
-﻿#ifndef SEQUENTIAL_GA_HPP
+#ifndef SEQUENTIAL_GA_HPP
 #define SEQUENTIAL_GA_HPP
 
 #include "../models/types.hpp"

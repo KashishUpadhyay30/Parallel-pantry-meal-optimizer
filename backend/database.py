@@ -1,10 +1,11 @@
-﻿"""
+"""
 SQLite Database Connection and Initialization
 Manages pantry state and optimization run records.
 """
 
 import sqlite3
 import os
+import sys
 import json
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -16,7 +17,7 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-def init_db():
+def init_db(force_reseed=False):
     conn = get_db_connection()
     cursor = conn.cursor()
 
@@ -53,10 +54,14 @@ def init_db():
     """)
     conn.commit()
 
+    if force_reseed:
+        cursor.execute("DELETE FROM pantry_items")
+        conn.commit()
+
     # Seed with sample pantry if empty
     cursor.execute("SELECT COUNT(*) as count FROM pantry_items")
     if cursor.fetchone()["count"] == 0 and os.path.exists(SAMPLE_PANTRY_PATH):
-        with open(SAMPLE_PANTRY_PATH, "r", encoding="utf-8") as f:
+        with open(SAMPLE_PANTRY_PATH, "r", encoding="utf-8-sig") as f:
             sample_items = json.load(f)
             for item in sample_items:
                 cursor.execute("""
@@ -72,5 +77,6 @@ def init_db():
     conn.close()
 
 if __name__ == "__main__":
-    init_db()
-    print("[+] Database initialized at:", DB_PATH)
+    force = "--reseed" in sys.argv
+    init_db(force_reseed=force)
+    print(f"[+] Database initialized (force_reseed={force}) at: {DB_PATH}")

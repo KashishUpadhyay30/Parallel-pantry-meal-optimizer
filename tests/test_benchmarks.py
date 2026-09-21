@@ -1,4 +1,4 @@
-﻿"""
+"""
 Integration and Verification Tests for Phase 5 & 6: Benchmarks and Tables
 Validates benchmark JSON/CSV outputs, table schema, and positive speedup metrics.
 """

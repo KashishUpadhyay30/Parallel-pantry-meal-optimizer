@@ -1,4 +1,4 @@
-﻿"""
+"""
 Integration and Sanity Tests for Phase 2: Sequential GA
 Validates compilation artifacts, executable execution, deterministic behavior,
 convergence progression, and JSON telemetry schema.

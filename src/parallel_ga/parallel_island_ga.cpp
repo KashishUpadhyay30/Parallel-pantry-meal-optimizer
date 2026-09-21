@@ -1,4 +1,4 @@
-﻿#include "parallel_island_ga.hpp"
+#include "parallel_island_ga.hpp"
 #include <omp.h>
 #include <algorithm>
 #include <chrono>

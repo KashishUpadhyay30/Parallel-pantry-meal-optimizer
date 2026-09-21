@@ -1,4 +1,4 @@
-﻿#ifndef DATA_LOADER_HPP
+#ifndef DATA_LOADER_HPP
 #define DATA_LOADER_HPP
 
 #include "../models/types.hpp"

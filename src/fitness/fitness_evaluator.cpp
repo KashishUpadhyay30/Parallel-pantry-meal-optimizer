@@ -1,4 +1,4 @@
-﻿#include "fitness_evaluator.hpp"
+#include "fitness_evaluator.hpp"
 #include <algorithm>
 #include <iostream>
 

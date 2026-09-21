@@ -1,4 +1,4 @@
-﻿"""
+"""
 Unit and Sanity Tests for Phase 1 Deliverables
 Validates dataset schemas, vocabulary completeness, nutrient bounds,
 and .dat file structure for C++ interop.

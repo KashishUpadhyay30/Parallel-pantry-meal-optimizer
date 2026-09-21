@@ -1,4 +1,4 @@
-﻿#include "../models/types.hpp"
+#include "../models/types.hpp"
 #include "../utils/data_loader.hpp"
 #include "../fitness/fitness_evaluator.hpp"
 #include "parallel_island_ga.hpp"

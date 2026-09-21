@@ -1,4 +1,4 @@
-﻿#include "sequential_ga.hpp"
+#include "sequential_ga.hpp"
 #include <algorithm>
 #include <chrono>
 #include <iostream>

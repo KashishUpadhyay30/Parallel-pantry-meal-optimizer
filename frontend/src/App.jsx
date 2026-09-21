@@ -59,18 +59,19 @@ export default function App() {
     }
   };
 
-  const handleRunOptimizer = async () => {
+  const handleRunOptimizer = async (customConfig = null) => {
     setIsOptimizing(true);
+    const payload = customConfig || optConfig;
     try {
       const res = await fetch(`${API_BASE}/optimize`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(optConfig)
+        body: JSON.stringify(payload)
       });
       if (res.ok) {
         const data = await res.json();
         setOptimizationResult(data);
-        showToast(`Optimization complete in ${data.execution_time_ms.toFixed(1)} ms (${data.algorithm}, ${data.num_threads}T)`);
+        showToast(`✨ Generated meal plan in ${data.execution_time_ms.toFixed(1)} ms (${data.algorithm}, ${data.num_threads}T)`);
         setActiveTab('meals');
       } else {
         showToast('Optimization failed. Check server logs.', 'error');
@@ -80,6 +81,14 @@ export default function App() {
     } finally {
       setIsOptimizing(false);
     }
+  };
+
+  // Reshuffle generates brand new random seeds each time for high recipe diversity
+  const handleReshuffle = async () => {
+    const freshSeed = Math.floor(Math.random() * 1000000) + 1;
+    const freshConfig = { ...optConfig, random_seed: freshSeed };
+    setOptConfig(freshConfig);
+    await handleRunOptimizer(freshConfig);
   };
 
   const handleAddPantryItem = async (item) => {
@@ -93,7 +102,7 @@ export default function App() {
         fetchPantry();
         showToast(`Added ${item.ingredient_name} to pantry`);
         // Trigger background dynamic re-optimization
-        handleRunOptimizer();
+        handleReshuffle();
       }
     } catch (err) {
       showToast('Failed to add ingredient', 'error');
@@ -106,7 +115,7 @@ export default function App() {
       if (res.ok) {
         fetchPantry();
         showToast('Removed item from pantry');
-        handleRunOptimizer();
+        handleReshuffle();
       }
     } catch (err) {
       showToast('Failed to delete item', 'error');
@@ -162,7 +171,7 @@ export default function App() {
       <Navbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        onQuickOptimize={handleRunOptimizer}
+        onQuickOptimize={handleReshuffle}
         isOptimizing={isOptimizing}
         pantryCount={pantryItems.length}
       />
@@ -173,7 +182,7 @@ export default function App() {
           <MealPlanView
             optimizationResult={optimizationResult}
             isOptimizing={isOptimizing}
-            onReoptimize={handleRunOptimizer}
+            onReoptimize={handleReshuffle}
             onNavigatePantry={() => setActiveTab('pantry')}
           />
         )}
@@ -199,7 +208,7 @@ export default function App() {
           <NutritionalTargets
             config={optConfig}
             setConfig={setOptConfig}
-            onRunOptimizer={handleRunOptimizer}
+            onRunOptimizer={() => handleRunOptimizer()}
             isOptimizing={isOptimizing}
           />
         )}
@@ -217,4 +226,3 @@ export default function App() {
     </div>
   );
 }
-

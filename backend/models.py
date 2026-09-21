@@ -49,9 +49,11 @@ class RecipeRecommendation(BaseModel):
     fat_g: float
     prep_time_min: int
     estimated_cost_usd: float
+    estimated_cost_inr: Optional[float] = None
     dietary_tags: List[str]
     ingredients_used_from_pantry: List[str]
-    missing_ingredients_to_buy: List[str]
+    missing_ingredients_to_buy: List[str] = []
+    optional_suggestions: Optional[List[str]] = []
     image_url: Optional[str] = None
 
 
@@ -63,6 +65,7 @@ class OptimizationResponse(BaseModel):
     nutrition_satisfaction_percent: float
     expiry_utilization_percent: float
     out_of_pocket_cost_usd: float
+    out_of_pocket_cost_inr: Optional[float] = None
     expiring_items_rescued_count: int
     macro_totals: dict
     recommendations: List[RecipeRecommendation]

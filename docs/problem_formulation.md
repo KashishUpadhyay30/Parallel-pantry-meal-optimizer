@@ -1,4 +1,4 @@
-﻿# Mathematical Formulation: High-Performance Multi-Objective Pantry-Aware Meal Planning
+# Mathematical Formulation: High-Performance Multi-Objective Pantry-Aware Meal Planning
 
 ## 1. Problem Overview
 The Pantry-Aware Meal Planning problem is formulated as a combinatorial **Multi-Objective Optimization Problem (MOOP)**. Given a set of available pantry ingredients with varying quantities and expiration timelines, along with a comprehensive recipe database $\mathcal{R}$, the goal is to construct a daily/multi-meal schedule $\mathcal{M}$ that simultaneously maximizes nutritional adherence and pantry depletion (prioritizing expiring items), while minimizing out-of-pocket grocery procurement costs and food spoilage penalties.

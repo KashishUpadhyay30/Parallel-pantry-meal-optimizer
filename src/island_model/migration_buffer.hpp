@@ -1,4 +1,4 @@
-﻿#ifndef MIGRATION_BUFFER_HPP
+#ifndef MIGRATION_BUFFER_HPP
 #define MIGRATION_BUFFER_HPP
 
 #include "../models/types.hpp"

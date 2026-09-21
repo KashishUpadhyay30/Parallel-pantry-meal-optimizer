@@ -1,4 +1,4 @@
-﻿"""
+"""
 Integration Tests for FastAPI Backend REST Endpoints
 Validates pantry CRUD, C++ optimizer bridge, performance metrics, and dynamic re-optimization.
 """

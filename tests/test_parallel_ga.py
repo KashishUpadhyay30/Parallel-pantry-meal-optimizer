@@ -1,4 +1,4 @@
-﻿"""
+"""
 Integration and Sanity Tests for Phase 3 & 4: OpenMP Parallel Island GA
 Validates parallel binary execution across 1, 2, and 4 threads,
 island sub-population partitioning, ring migration telemetry, and JSON schema.

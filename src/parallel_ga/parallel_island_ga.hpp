@@ -1,4 +1,4 @@
-﻿#ifndef PARALLEL_ISLAND_GA_HPP
+#ifndef PARALLEL_ISLAND_GA_HPP
 #define PARALLEL_ISLAND_GA_HPP
 
 #include "../models/types.hpp"

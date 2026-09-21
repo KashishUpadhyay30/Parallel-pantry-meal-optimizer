@@ -1,4 +1,4 @@
-﻿# High-Performance Parallel Multi-Objective Optimization for Real-Time Pantry-Aware Meal Planning
+# High-Performance Parallel Multi-Objective Optimization for Real-Time Pantry-Aware Meal Planning
 
 **Kashish Upadhyay**\
 *Department of Computer Science & Engineering*\

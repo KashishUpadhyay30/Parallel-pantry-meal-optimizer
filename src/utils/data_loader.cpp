@@ -1,4 +1,4 @@
-﻿#include "data_loader.hpp"
+#include "data_loader.hpp"
 #include <fstream>
 #include <sstream>
 #include <iostream>

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Dataset Generator for High-Performance Multi-Objective Meal Planning
 Generates multi-tier raw recipe datasets (Small: 60, Medium: 500, Large: 2500)
 and realistic sample pantry inventories.

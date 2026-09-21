@@ -1,4 +1,4 @@
-﻿/**
+/**
  * MPI Distributed-Memory Island Model Genetic Algorithm
  * Designed for multi-node High-Performance Computing (HPC) clusters.
  * Uses non-blocking / synchronized point-to-point MPI communication

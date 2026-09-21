@@ -1,4 +1,4 @@
-﻿"""
+"""
 Data Preprocessing and Normalization Pipeline
 Normalizes recipe and pantry data, builds ingredient vocabulary, 
 validates data integrity, and generates both JSON/CSV and compact 

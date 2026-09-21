@@ -193,7 +193,7 @@ def simulate_pantry_change(sim: SimulatePantryChangeRequest):
         cursor.execute("DELETE FROM pantry_items")
         conn.commit()
         conn.close()
-        init_db() # re-seeds
+        init_db(force_reseed=True) # re-seeds fresh
         action_msg = "Reset pantry to default perishable state"
         return {"action": action_msg, "optimization_result": trigger_optimization(OptimizeRequest())}
 
