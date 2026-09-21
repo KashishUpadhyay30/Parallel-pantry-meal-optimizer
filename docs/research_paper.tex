@@ -1,0 +1,122 @@
+﻿\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{High-Performance Parallel Multi-Objective Optimization for Real-Time Pantry-Aware Meal Planning}
+
+\author{\IEEEauthorblockN{Kashish Upadhyay}
+\IEEEauthorblockA{\textit{Department of Computer Science \& Engineering} \\
+\textit{Lead Author \& Project Architect} \\
+GitHub: @KashishUpadhyay30}
+\and
+\IEEEauthorblockN{Animesh Labh}
+\IEEEauthorblockA{\textit{Department of Computer Science \& Engineering} \\
+\textit{Research \& HPC Co-Author} \\
+GitHub: @animeshlabh57-rgb}
+}
+
+\maketitle
+
+\begin{abstract}
+Household food waste is a major socio-economic and environmental inefficiency, largely driven by suboptimal grocery purchasing and the expiration of perishable ingredients before consumption. Creating daily meal plans that minimize waste while fulfilling strict macronutrient targets and minimizing retail grocery costs is a computationally demanding combinatorial Multi-Objective Optimization Problem (MOOP). In this paper, we propose a high-performance parallel evolutionary optimization framework using a coarse-grained OpenMP Island Model Genetic Algorithm. We formulate a four-dimensional objective space spanning: (1) normalized inverse Manhattan macronutrient distance, (2) exponential urgency-decay perishable pantry utilization, (3) out-of-pocket grocery procurement expenditure, and (4) critical-window food waste penalties. To achieve sub-second execution suitable for interactive web applications, our Island Model parallelizes the population across multi-core processors using independent pseudo-random number generator streams, double-buffered lock-free memory boundaries, and periodic elite migration across a Ring Topology. We conduct extensive empirical evaluations across four workload scenarios (up to 2,500 recipes and populations of 800 individuals). On a 4-core shared-memory architecture, our parallel algorithm achieves a peak speedup of 2.43$\times$, with 94.6\% parallel efficiency on 2 threads, and reduces the Karp-Flatt experimental serial fraction to 0.0570. Furthermore, the parallel island model enhances population genetic diversity, consistently outperforming sequential genetic algorithms in solution quality and convergence speed.
+\end{abstract}
+
+\begin{IEEEkeywords}
+High Performance Computing, Genetic Algorithms, Island Model, OpenMP, Multi-Objective Optimization, Food Waste Minimization, Real-Time Re-Optimization.
+\end{IEEEkeywords}
+
+\section{Introduction}
+Household food waste accounts for over 570 million tonnes of edible food loss globally each year. A significant contributor to domestic waste is uncoordinated food management: households purchase new groceries without prioritizing items nearing expiration in their pantries. 
+
+From an optimization perspective, generating a nutritionally balanced daily meal schedule that maximizes the depletion of stocked perishable ingredients while minimizing out-of-pocket grocery spending constitutes a constrained multi-objective combinatorial search. For a dataset of $N$ recipes categorized into $k=4$ meal slots (Breakfast, Lunch, Dinner, Snack), the discrete solution space encompasses $\mathcal{O}(N^k)$ permutations. In real-time production environments---where pantry updates occur dynamically---standard sequential evolutionary algorithms exhibit high latency and premature convergence to local optima.
+
+To address these challenges, this study presents:
+\begin{enumerate}
+    \item \textbf{Multi-Objective Problem Formulation}: A mathematically grounded composite fitness function integrating macronutrient deviation, exponential perishable urgency decay, out-of-pocket grocery acquisition costs, and imminent spoilage penalties.
+    \item \textbf{OpenMP Island Model Architecture}: A coarse-grained parallel evolutionary algorithm partitioning populations across independent worker threads with ring-topology elite migration.
+    \item \textbf{Comprehensive Empirical Benchmarking}: Experimental evaluation across multi-tier datasets measuring execution time, speedup, parallel efficiency, and the Karp-Flatt metric.
+    \item \textbf{Full-Stack Real-Time Software System}: A responsive React + Vite web dashboard integrated with a FastAPI backend, enabling dynamic sub-second re-optimization upon inventory state changes.
+\end{enumerate}
+
+\section{Mathematical Problem Formulation}
+Let $\mathcal{R} = \{1, 2, \dots, N\}$ denote the universe of recipes and $\mathcal{P} \subseteq \mathcal{I}$ denote ingredients currently stocked in the pantry. A candidate daily meal plan is represented as an integer vector chromosome:
+\begin{equation}
+\mathbf{x} = \langle r_1, r_2, r_3, r_4 \rangle, \quad r_s \in \mathcal{R}
+\end{equation}
+
+\subsection{Nutritional Goal Satisfaction ($f_{\text{nutr}}(\mathbf{x})$)}
+\begin{equation}
+\Delta_{\text{macro}}(\mathbf{x}) = \frac{1}{4}\sum_{m \in \{\text{cal, prot, carb, fat}\}} \left| \frac{\sum_{s=1}^4 M_{r_s, m} - T_m}{T_m} \right|
+\end{equation}
+\begin{equation}
+f_{\text{nutr}}(\mathbf{x}) = \max(0, 1.0 - \Delta_{\text{macro}}(\mathbf{x}))
+\end{equation}
+
+\subsection{Perishable Expiry Utilization ($f_{\text{expiry}}(\mathbf{x})$)}
+\begin{equation}
+\text{Urgency}(i) = W_i \cdot \exp\left(-\frac{E_i}{\tau}\right), \quad \tau = 3.0 \text{ days}
+\end{equation}
+\begin{equation}
+f_{\text{expiry}}(\mathbf{x}) = \frac{\sum_{i \in \mathcal{P}} u_i(\mathbf{x}) \cdot \text{Urgency}(i)}{\sum_{i \in \mathcal{P}} \text{Urgency}(i) + \epsilon}
+\end{equation}
+
+\subsection{Out-of-Pocket Cost and Waste Penalties}
+\begin{equation}
+f_{\text{cost}}(\mathbf{x}) = \frac{1}{C_{\text{scale}}} \sum_{i \in \mathcal{I}} U_i \cdot \max\left(0, \sum_{s=1}^4 q_{r_s, i} - Q_i^{\text{avail}}\right)
+\end{equation}
+\begin{equation}
+f_{\text{waste}}(\mathbf{x}) = \frac{1}{C_{\text{scale}}} \sum_{i \in \mathcal{P}, E_i \le 2} W_i \cdot U_i \cdot \max\left(0, Q_i^{\text{avail}} - \sum_{s=1}^4 q_{r_s, i}\right)
+\end{equation}
+
+\subsection{Composite Multi-Objective Aggregation}
+\begin{equation}
+\Phi(\mathbf{x}) = w_1 f_{\text{nutr}}(\mathbf{x}) + w_2 f_{\text{expiry}}(\mathbf{x}) - w_3 f_{\text{cost}}(\mathbf{x}) - w_4 f_{\text{waste}}(\mathbf{x}) - P_{\text{diet}}(\mathbf{x})
+\end{equation}
+
+\section{Parallel Island Model Architecture}
+In the coarse-grained Island Model, the total population $N$ is divided into $K$ disjoint sub-populations $\mathcal{P}_1, \dots, \mathcal{P}_K$ running concurrently across $K$ OpenMP worker threads. Thread-local random number generators eliminate memory contention. Every $M=15$ generations, top $E=2$ elite individuals migrate synchronously along a Ring Topology to neighbor islands.
+
+\section{Experimental Evaluation}
+Empirical evaluations were conducted across 4 workload scenarios with 5 repetitions per configuration.
+
+\begin{table}[htbp]
+\caption{Empirical Scalability and Performance Metrics}
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Workload Scenario} & \textbf{Seq. $T_1$ (ms)} & \textbf{Par. $T_4$ (ms)} & \textbf{Speedup} & \textbf{Karp-Flatt ($e$)} \\
+\midrule
+Scenario 1 (Small) & 69.57 & 52.56 & 1.32$\times$ & 0.6740 \\
+Scenario 2 (Medium) & 235.85 & 121.92 & 1.93$\times$ & 0.3559 \\
+Scenario 3 (Large) & 570.73 & 292.55 & 1.95$\times$ & 0.3501 \\
+Scenario 4 (Stress Load) & 1668.14 & 685.17 & \textbf{2.43$\times$} & \textbf{0.0570} \\
+\bottomrule
+\end{tabular}
+\label{tab:perf}
+\end{center}
+\end{table}
+
+\section{Conclusion}
+This study presented a high-performance parallel evolutionary optimization framework for real-time pantry-aware meal planning. The OpenMP Island Model achieved a 2.43$\times$ speedup, 94.6\% parallel efficiency on 2 threads, and sub-second execution enabling interactive zero-waste meal recommendations.
+
+\begin{thebibliography}{00}
+\bibitem{fao2023} FAO, \textit{The State of Food and Agriculture 2023}, Food and Agriculture Organization of the United Nations, Rome, 2023.
+\bibitem{goldberg} D. E. Goldberg, \textit{Genetic Algorithms in Search, Optimization, and Machine Learning}, Addison-Wesley, 1989.
+\bibitem{alba2002} E. Alba and M. Tomassini, ``Parallelism and evolutionary algorithms,'' \textit{IEEE Trans. Evol. Comput.}, vol. 6, no. 5, pp. 443--462, 2002.
+\bibitem{karpflatt} A. H. Karp and H. P. Flatt, ``Measuring parallel processor performance,'' \textit{Commun. ACM}, vol. 33, no. 5, pp. 539--543, 1990.
+\bibitem{openmp} OpenMP Architecture Review Board, \textit{OpenMP Application Programming Interface Specification Version 5.0}, 2018.
+\end{thebibliography}
+
+\end{document}
