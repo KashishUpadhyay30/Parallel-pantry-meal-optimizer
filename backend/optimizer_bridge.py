@@ -26,18 +26,18 @@ INGREDIENT_IMAGE_MAP = {
     "yogurt": "https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=400&q=80",
     "carrots": "https://images.unsplash.com/photo-1447175008436-054170c2e979?auto=format&fit=crop&w=400&q=80",
     "carrot": "https://images.unsplash.com/photo-1447175008436-054170c2e979?auto=format&fit=crop&w=400&q=80",
-    "rolled oats": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80",
-    "oats": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80",
-    "oat": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80",
+    "rolled oats": "/images/rolled_oats_bowl.png",
+    "oats": "/images/rolled_oats_bowl.png",
+    "oat": "/images/rolled_oats_bowl.png",
     "peanut butter": "/images/peanut_butter_jar.jpg",
-    "brown rice": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80",
+    "brown rice": "/images/brown_rice_bowl.png",
     "white rice": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80",
     "rice": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80",
     "chia seeds": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=400&q=80",
     "chia": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=400&q=80",
-    "soy sauce": "https://images.unsplash.com/photo-1563865436874-9aef32095fad?auto=format&fit=crop&w=400&q=80",
-    "chickpeas (canned)": "https://images.unsplash.com/photo-1585994194090-d54b5e282b6d?auto=format&fit=crop&w=400&q=80",
-    "chickpeas": "https://images.unsplash.com/photo-1585994194090-d54b5e282b6d?auto=format&fit=crop&w=400&q=80",
+    "soy sauce": "/images/soy_sauce_dish.png",
+    "chickpeas (canned)": "/images/chickpeas_can.png",
+    "chickpeas": "/images/chickpeas_can.png",
     "pasta (spaghetti/penne)": "https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&w=400&q=80",
     "pasta": "https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&w=400&q=80",
     "spaghetti": "https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&w=400&q=80",
@@ -143,6 +143,8 @@ def get_recipe_image_url(recipe_name, slot="", recipe_id=1):
         return "/images/harvest_bowl_436.png"
     if "garden-fresh creamy garlic parmesan chicken fettuccine" in name or str(recipe_id) == "69":
         return "/images/chicken_fettuccine_69.png"
+    if "rustic strawberries & dark chocolate walnut cup" in name or str(recipe_id) == "816" or "strawberries & dark chocolate walnut cup style 816" in name:
+        return "/images/rustic_strawberry_chocolate_816.jpg"
     if "roasted strawberries & dark chocolate walnut cup" in name or str(recipe_id) == "34":
         return "/images/strawberry_walnut_cup_34.jpg"
 
@@ -283,6 +285,33 @@ def export_db_pantry_to_dat(temp_dat_path, vocab):
     return stock_map, unit_cost_map
 
 
+def export_filtered_recipes_to_dat(temp_recipe_dat, filtered_recipes_list):
+    """
+    Exports a strictly filtered recipe list (enforcing dietary restrictions) into C++ .dat binary format.
+    """
+    with open(temp_recipe_dat, "w", encoding="utf-8") as f:
+        f.write(f"{len(filtered_recipes_list)}\n")
+        for r in filtered_recipes_list:
+            cat_id = r.get("category_id", 1)
+            prep_time = r.get("preparation_time_min", 15)
+            cal = r.get("calories", 400.0)
+            prot = r.get("protein_g", 25.0)
+            carb = r.get("carbohydrates_g", 40.0)
+            fat = r.get("fat_g", 12.0)
+            cost = r.get("estimated_cost_usd", 3.0)
+            
+            tag_ids = r.get("dietary_tag_ids", [])
+            tag_str = f"{len(tag_ids)} " + " ".join(str(t) for t in tag_ids) if tag_ids else "0"
+            
+            ings = r.get("ingredients", [])
+            ing_str_parts = [str(len(ings))]
+            for ing in ings:
+                ing_str_parts.append(f"{ing.get('ingredient_id', 0)} {ing.get('quantity', 0.0):.2f}")
+            ing_str = " ".join(ing_str_parts)
+            
+            f.write(f"{r['recipe_id']} {cat_id} {prep_time} {cal:.1f} {prot:.1f} {carb:.1f} {fat:.1f} {cost:.2f} {tag_str} {ing_str}\n")
+
+
 def run_optimization(req):
     vocab = load_vocabulary()
     recipes_by_id = load_processed_recipes(req.dataset_tier)
@@ -294,19 +323,50 @@ def run_optimization(req):
     with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as tf_json:
         temp_out_json = tf_json.name
 
+    temp_filtered_recipe_dat = None
+
     try:
         pantry_stock, pantry_unit_costs = export_db_pantry_to_dat(temp_pantry_dat, vocab)
 
-        recipe_dat = os.path.join(PROCESSED_DIR, f"recipes_{req.dataset_tier}.dat")
-        if not os.path.exists(recipe_dat):
-            recipe_dat = os.path.join(PROCESSED_DIR, "recipes_medium.dat")
+        # 2. Handle Strict Dietary Restrictions & Filter Tags
+        required_tags = [t.strip() for t in (req.required_dietary_tags or []) if t.strip()]
+        
+        if required_tags:
+            # Strictly filter candidate recipes to only those matching ALL required tags
+            compliant_recipes = [
+                r for r in recipes_by_id.values()
+                if all(tag in r.get("dietary_tags", []) for tag in required_tags)
+            ]
+            
+            # Check if all 4 categories (Breakfast, Lunch, Dinner, Snack) are represented
+            cats_present = set(r.get("category_id", 1) for r in compliant_recipes)
+            if len(cats_present) < 4:
+                # If tier was small, load from larger catalog to ensure sufficient compliant recipes
+                larger_recipes = load_processed_recipes("large")
+                compliant_recipes = [
+                    r for r in larger_recipes.values()
+                    if all(tag in r.get("dietary_tags", []) for tag in required_tags)
+                ]
+                # Merge into recipes_by_id for metadata enrichment
+                for r in compliant_recipes:
+                    recipes_by_id[r["recipe_id"]] = r
+
+            with tempfile.NamedTemporaryFile(suffix=".dat", delete=False) as tf_rec:
+                temp_filtered_recipe_dat = tf_rec.name
+            
+            export_filtered_recipes_to_dat(temp_filtered_recipe_dat, compliant_recipes)
+            recipe_dat = temp_filtered_recipe_dat
+        else:
+            recipe_dat = os.path.join(PROCESSED_DIR, f"recipes_{req.dataset_tier}.dat")
+            if not os.path.exists(recipe_dat):
+                recipe_dat = os.path.join(PROCESSED_DIR, "recipes_medium.dat")
 
         # Dynamic Random Seed handling for instant recipe reshuffling
         seed_val = req.random_seed
         if seed_val <= 0:
             seed_val = random.randint(1, 1000000)
 
-        # 2. Prepare Command
+        # 3. Prepare Command
         if req.algorithm.lower() == "parallel":
             bin_exec = BIN_PAR
             cmd = [
@@ -339,16 +399,16 @@ def run_optimization(req):
                 "--output_json", temp_out_json
             ]
 
-        # 3. Execute C++ Engine
+        # 4. Execute C++ Engine
         res = subprocess.run(cmd, capture_output=True, text=True, cwd=BASE_DIR)
         if res.returncode != 0:
             raise RuntimeError(f"C++ Optimizer failed: {res.stderr}")
 
-        # 4. Load JSON telemetry
+        # 5. Load JSON telemetry
         with open(temp_out_json, "r", encoding="utf-8-sig") as f:
             run_data = json.load(f)
 
-        # 5. Enrich with 100% Pantry-Sourced Meal Recommendations & Step-by-Step Cooking Guide
+        # 6. Enrich with 100% Pantry-Sourced Meal Recommendations & Step-by-Step Cooking Guide
         slots = ["Breakfast", "Lunch", "Dinner", "Snack"]
         recommendations = []
         selected_ids = run_data.get("selected_recipes", [])
@@ -414,7 +474,7 @@ def run_optimization(req):
                 "image_url": get_recipe_image_url(r_meta["recipe_name"], slot_name, r_meta["recipe_id"])
             })
 
-        # 6. Save in SQLite History
+        # 7. Save in SQLite History
         scores = run_data["best_scores"]
         conn = get_db_connection()
         cursor = conn.cursor()
@@ -462,3 +522,5 @@ def run_optimization(req):
             os.remove(temp_pantry_dat)
         if os.path.exists(temp_out_json):
             os.remove(temp_out_json)
+        if temp_filtered_recipe_dat and os.path.exists(temp_filtered_recipe_dat):
+            os.remove(temp_filtered_recipe_dat)

@@ -5,9 +5,11 @@ const RECIPE_OVERRIDES = {
   '436': '/images/harvest_bowl_436.png',
   '69': '/images/chicken_fettuccine_69.png',
   '34': '/images/strawberry_walnut_cup_34.jpg',
+  '816': '/images/rustic_strawberry_chocolate_816.jpg',
   'fiesta grilled chicken & quinoa harvest bowl': '/images/harvest_bowl_436.png',
   'garden-fresh creamy garlic parmesan chicken fettuccine': '/images/chicken_fettuccine_69.png',
-  'roasted strawberries & dark chocolate walnut cup': '/images/strawberry_walnut_cup_34.jpg'
+  'roasted strawberries & dark chocolate walnut cup': '/images/strawberry_walnut_cup_34.jpg',
+  'rustic strawberries & dark chocolate walnut cup': '/images/rustic_strawberry_chocolate_816.jpg'
 };
 
 function getRecipePhoto(rec) {
