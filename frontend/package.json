@@ -9,10 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "clsx": "^2.1.1",
     "lucide-react": "^0.453.0",
-    "clsx": "^2.1.1"
+    "parallel-pantry-meal-optimizer": "file:..",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.3",

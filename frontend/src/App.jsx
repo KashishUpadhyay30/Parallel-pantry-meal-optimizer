@@ -4,6 +4,13 @@ import MealPlanView from './components/MealPlanView';
 import PantryManager from './components/PantryManager';
 import HPCMetricsDashboard from './components/HPCMetricsDashboard';
 import NutritionalTargets from './components/NutritionalTargets';
+import {
+  getLocalPantry,
+  saveLocalPantry,
+  runClientOptimization,
+  DEFAULT_PANTRY_ITEMS,
+  getIngredientImageUrl
+} from './services/clientOptimizer';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('meals');
@@ -27,7 +34,7 @@ export default function App() {
     required_dietary_tags: []
   });
 
-  const API_BASE = 'http://127.0.0.1:8000';
+  const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://127.0.0.1:8000' : '');
 
   const showToast = (msg, type = 'success') => {
     setNotification({ msg, type });
@@ -36,48 +43,80 @@ export default function App() {
 
   // Fetch initial pantry and performance data
   const fetchPantry = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/pantry`);
-      if (res.ok) {
-        const data = await res.json();
-        setPantryItems(data);
+    if (API_BASE) {
+      try {
+        const res = await fetch(`${API_BASE}/pantry`);
+        if (res.ok) {
+          const data = await res.json();
+          setPantryItems(data);
+          saveLocalPantry(data);
+          return data;
+        }
+      } catch (err) {
+        console.warn('Backend unavailable, using client-side pantry store:', err);
       }
-    } catch (err) {
-      console.error('Failed to fetch pantry:', err);
     }
+    const local = getLocalPantry();
+    setPantryItems(local);
+    return local;
   };
 
   const fetchPerformance = async () => {
+    if (API_BASE) {
+      try {
+        const res = await fetch(`${API_BASE}/performance`);
+        if (res.ok) {
+          const data = await res.json();
+          setPerformanceData(data);
+          return;
+        }
+      } catch (err) {
+        console.warn('Backend unavailable, fetching local benchmark dataset:', err);
+      }
+    }
     try {
-      const res = await fetch(`${API_BASE}/performance`);
+      const res = await fetch('/data/benchmark_results_summary.json');
       if (res.ok) {
         const data = await res.json();
         setPerformanceData(data);
       }
-    } catch (err) {
-      console.error('Failed to fetch performance:', err);
+    } catch (e) {
+      console.warn('Could not load static benchmark data:', e);
     }
   };
 
-  const handleRunOptimizer = async (customConfig = null) => {
+  const handleRunOptimizer = async (customConfig = null, currentPantry = null) => {
     setIsOptimizing(true);
     const payload = customConfig || optConfig;
-    try {
-      const res = await fetch(`${API_BASE}/optimize`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (res.ok) {
-        const data = await res.json();
-        setOptimizationResult(data);
-        showToast(`✨ Generated meal plan in ${data.execution_time_ms.toFixed(1)} ms (${data.algorithm}, ${data.num_threads}T)`);
-        setActiveTab('meals');
-      } else {
-        showToast('Optimization failed. Check server logs.', 'error');
+    const activePantry = currentPantry || (pantryItems.length > 0 ? pantryItems : getLocalPantry());
+
+    if (API_BASE) {
+      try {
+        const res = await fetch(`${API_BASE}/optimize`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setOptimizationResult(data);
+          showToast(`✨ Generated meal plan in ${data.execution_time_ms.toFixed(1)} ms (${data.algorithm}, ${data.num_threads}T)`);
+          setIsOptimizing(false);
+          return;
+        }
+      } catch (err) {
+        console.warn('Live backend offline, running client-side GA optimizer:', err);
       }
-    } catch (err) {
-      showToast(`Network error: ${err.message}`, 'error');
+    }
+
+    // Client-side execution fallback
+    try {
+      const clientRes = await runClientOptimization(payload, activePantry);
+      setOptimizationResult(clientRes);
+      showToast(`✨ Generated meal plan in ${clientRes.execution_time_ms.toFixed(1)} ms (${clientRes.algorithm})`);
+    } catch (e) {
+      console.error('Client optimizer error:', e);
+      showToast('Optimization failed. Please try again.', 'error');
     } finally {
       setIsOptimizing(false);
     }
@@ -92,63 +131,124 @@ export default function App() {
   };
 
   const handleAddPantryItem = async (item) => {
-    try {
-      const res = await fetch(`${API_BASE}/pantry`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(item)
-      });
-      if (res.ok) {
-        fetchPantry();
-        showToast(`Added ${item.ingredient_name} to pantry`);
-        // Trigger background dynamic re-optimization
-        handleReshuffle();
+    const newItem = {
+      ...item,
+      id: Date.now(),
+      image_url: getIngredientImageUrl(item.ingredient_name)
+    };
+
+    if (API_BASE) {
+      try {
+        const res = await fetch(`${API_BASE}/pantry`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(item)
+        });
+        if (res.ok) {
+          await fetchPantry();
+          showToast(`Added ${item.ingredient_name} to pantry`);
+          handleReshuffle();
+          return;
+        }
+      } catch (err) {
+        console.warn('Backend unavailable, adding locally:', err);
       }
-    } catch (err) {
-      showToast('Failed to add ingredient', 'error');
     }
+
+    const updated = [newItem, ...pantryItems];
+    setPantryItems(updated);
+    saveLocalPantry(updated);
+    showToast(`Added ${item.ingredient_name} to pantry`);
+    handleRunOptimizer(null, updated);
   };
 
   const handleDeletePantryItem = async (id) => {
-    try {
-      const res = await fetch(`${API_BASE}/pantry/${id}`, { method: 'DELETE' });
-      if (res.ok) {
-        fetchPantry();
-        showToast('Removed item from pantry');
-        handleReshuffle();
+    if (API_BASE) {
+      try {
+        const res = await fetch(`${API_BASE}/pantry/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+          await fetchPantry();
+          showToast('Removed item from pantry');
+          handleReshuffle();
+          return;
+        }
+      } catch (err) {
+        console.warn('Backend unavailable, deleting locally:', err);
       }
-    } catch (err) {
-      showToast('Failed to delete item', 'error');
     }
+
+    const updated = pantryItems.filter(p => p.id !== id);
+    setPantryItems(updated);
+    saveLocalPantry(updated);
+    showToast('Removed item from pantry');
+    handleRunOptimizer(null, updated);
   };
 
   const handleSimulateChange = async (action, ingredient_name) => {
-    try {
-      const res = await fetch(`${API_BASE}/simulate-pantry-change`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action, ingredient_name })
-      });
-      if (res.ok) {
-        const data = await res.json();
-        fetchPantry();
-        if (data.dynamic_reoptimization) {
-          setOptimizationResult(data.dynamic_reoptimization);
-        } else if (data.optimization_result) {
-          setOptimizationResult(data.optimization_result);
+    if (API_BASE) {
+      try {
+        const res = await fetch(`${API_BASE}/simulate-pantry-change`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action, ingredient_name })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          await fetchPantry();
+          if (data.dynamic_reoptimization) {
+            setOptimizationResult(data.dynamic_reoptimization);
+          } else if (data.optimization_result) {
+            setOptimizationResult(data.optimization_result);
+          }
+          showToast(`⚡ Real-Time Event: ${data.action}`);
+          setActiveTab('meals');
+          return;
         }
-        showToast(`⚡ Real-Time Event: ${data.action}`);
-        setActiveTab('meals');
+      } catch (err) {
+        console.warn('Backend unavailable, simulating locally:', err);
       }
-    } catch (err) {
-      showToast('Simulation failed', 'error');
     }
+
+    // Client-side simulation
+    let updated = [...pantryItems];
+    let actionDesc = '';
+    if (action === 'consume' && ingredient_name) {
+      const idx = updated.findIndex(p => p.ingredient_name.toLowerCase() === ingredient_name.toLowerCase());
+      if (idx !== -1) {
+        const newQty = Math.max(0, updated[idx].quantity - 100);
+        if (newQty === 0) {
+          updated.splice(idx, 1);
+          actionDesc = `Consumed all of ${ingredient_name}`;
+        } else {
+          updated[idx] = { ...updated[idx], quantity: newQty };
+          actionDesc = `Consumed 100g of ${ingredient_name} (left: ${newQty}g)`;
+        }
+      }
+    } else if (action === 'spoil_warning' && ingredient_name) {
+      const idx = updated.findIndex(p => p.ingredient_name.toLowerCase() === ingredient_name.toLowerCase());
+      if (idx !== -1) {
+        updated[idx] = { ...updated[idx], days_to_expiry: 1 };
+        actionDesc = `Urgent 24h expiration warning for ${ingredient_name}`;
+      }
+    } else if (action === 'reset') {
+      updated = DEFAULT_PANTRY_ITEMS.map(i => ({ ...i, image_url: getIngredientImageUrl(i.ingredient_name) }));
+      actionDesc = 'Reset pantry to default perishable state';
+    }
+
+    setPantryItems(updated);
+    saveLocalPantry(updated);
+    showToast(`⚡ Real-Time Event: ${actionDesc}`);
+    await handleRunOptimizer(null, updated);
+    setActiveTab('meals');
   };
 
   useEffect(() => {
-    fetchPantry();
-    fetchPerformance();
-    handleRunOptimizer();
+    async function init() {
+      const pantry = await fetchPantry();
+      await fetchPerformance();
+      await handleRunOptimizer(null, pantry);
+    }
+    init();
   }, []);
 
   return (
