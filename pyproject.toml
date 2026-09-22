@@ -2,5 +2,12 @@
 name = "parallel-pantry-meal-optimizer"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "fastapi>=0.110.0",
+    "pydantic>=2.0.0"
+]
+
+[tool.vercel]
+entrypoint = "main.py"
+
 

@@ -1,10 +1,7 @@
-backend/
 bin/
 docs/
 experiments/
 results/
 scripts/
 src/
-pyproject.toml
-requirements.txt
 tests/
