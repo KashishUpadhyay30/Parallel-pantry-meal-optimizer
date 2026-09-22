@@ -1,6 +1,27 @@
 import React, { useState } from 'react';
 import { Clock, CheckCircle2, Sparkles, Flame, Zap, ChefHat, Leaf, PlusCircle, ArrowRight, X, Utensils, BookOpen, Check, Printer } from 'lucide-react';
 
+const RECIPE_OVERRIDES = {
+  '436': '/images/harvest_bowl_436.png',
+  '69': '/images/chicken_fettuccine_69.png',
+  '34': '/images/strawberry_walnut_cup_34.jpg',
+  'fiesta grilled chicken & quinoa harvest bowl': '/images/harvest_bowl_436.png',
+  'garden-fresh creamy garlic parmesan chicken fettuccine': '/images/chicken_fettuccine_69.png',
+  'roasted strawberries & dark chocolate walnut cup': '/images/strawberry_walnut_cup_34.jpg'
+};
+
+function getRecipePhoto(rec) {
+  if (!rec) return '';
+  const idStr = String(rec.recipe_id || '');
+  const nameLower = (rec.recipe_name || '').toLowerCase();
+  
+  if (RECIPE_OVERRIDES[idStr]) return RECIPE_OVERRIDES[idStr];
+  for (const [k, url] of Object.entries(RECIPE_OVERRIDES)) {
+    if (nameLower.includes(k)) return url;
+  }
+  return rec.image_url || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80';
+}
+
 export default function MealPlanView({ optimizationResult, isOptimizing, onReoptimize, onNavigatePantry }) {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [completedSteps, setCompletedSteps] = useState({});
@@ -147,7 +168,7 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
                 {/* Real-Life Food Photo Header */}
                 <div className="relative h-52 w-full overflow-hidden bg-slate-100">
                   <img
-                    src={rec.image_url || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80'}
+                    src={getRecipePhoto(rec)}
                     alt={rec.recipe_name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
@@ -277,7 +298,7 @@ export default function MealPlanView({ optimizationResult, isOptimizing, onReopt
             {/* Modal Image Header */}
             <div className="relative h-64 w-full bg-slate-100 shrink-0">
               <img
-                src={selectedRecipe.image_url || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80'}
+                src={getRecipePhoto(selectedRecipe)}
                 alt={selectedRecipe.recipe_name}
                 className="w-full h-full object-cover"
               />

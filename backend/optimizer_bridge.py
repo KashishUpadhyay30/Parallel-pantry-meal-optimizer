@@ -20,8 +20,8 @@ VOCAB_PATH = os.path.join(PROCESSED_DIR, "ingredient_vocabulary.json")
 
 # Verified authentic photography for every single pantry item
 INGREDIENT_IMAGE_MAP = {
-    "mushrooms": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=400&q=80",
-    "mushroom": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=400&q=80",
+    "mushrooms": "/images/mushrooms_basket.jpg",
+    "mushroom": "/images/mushrooms_basket.jpg",
     "greek yogurt": "https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=400&q=80",
     "yogurt": "https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=400&q=80",
     "carrots": "https://images.unsplash.com/photo-1447175008436-054170c2e979?auto=format&fit=crop&w=400&q=80",
@@ -29,7 +29,7 @@ INGREDIENT_IMAGE_MAP = {
     "rolled oats": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80",
     "oats": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80",
     "oat": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80",
-    "peanut butter": "https://images.unsplash.com/photo-1528751014936-863e6e7a319c?auto=format&fit=crop&w=400&q=80",
+    "peanut butter": "/images/peanut_butter_jar.jpg",
     "brown rice": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80",
     "white rice": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80",
     "rice": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80",
@@ -137,6 +137,14 @@ def get_recipe_image_url(recipe_name, slot="", recipe_id=1):
     name = (recipe_name or "").lower()
     slot_l = (slot or "").lower()
     idx = int(recipe_id) % 3
+
+    # Exact overrides requested by user
+    if "fiesta grilled chicken & quinoa harvest bowl" in name or str(recipe_id) == "436":
+        return "/images/harvest_bowl_436.png"
+    if "garden-fresh creamy garlic parmesan chicken fettuccine" in name or str(recipe_id) == "69":
+        return "/images/chicken_fettuccine_69.png"
+    if "roasted strawberries & dark chocolate walnut cup" in name or str(recipe_id) == "34":
+        return "/images/strawberry_walnut_cup_34.jpg"
 
     if "omelet" in name or "egg" in name or "scramble" in name or "frittata" in name:
         return RECIPE_PHOTO_POOLS["breakfast_omelette"][idx]

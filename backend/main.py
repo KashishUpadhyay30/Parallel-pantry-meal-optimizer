@@ -11,6 +11,8 @@ from typing import List, Optional
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 
+from fastapi.staticfiles import StaticFiles
+
 from .database import init_db, get_db_connection
 from .models import (
     PantryItemCreate, PantryItemUpdate, PantryItemResponse,
@@ -38,6 +40,10 @@ app.add_middleware(
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TABLES_DIR = os.path.join(BASE_DIR, "results", "tables")
+
+static_img_dir = os.path.join(BASE_DIR, "backend", "static", "images")
+if os.path.exists(static_img_dir):
+    app.mount("/images", StaticFiles(directory=static_img_dir), name="images")
 
 @app.get("/")
 def root():
